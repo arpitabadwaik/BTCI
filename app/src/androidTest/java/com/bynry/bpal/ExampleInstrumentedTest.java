@@ -1,4 +1,4 @@
-package com.bynry.bpalapplication;
+package com.bynry.bpal;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

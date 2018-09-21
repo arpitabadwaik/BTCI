@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.SignUpActivity"
+    android:background="@drawable/ic_action_background_login"
+    android:id="@+id/relative_layout_main">
+
+    <LinearLayout
+        android:id="@+id/login_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/txt_b_pal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/b_pal"
+            android:layout_gravity="center"
+            android:textColor="@color/text_color_blue"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/zarista"
+            android:textSize="60sp"/>
+
+        <TextView
+            android:id="@+id/txt_login_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_with_personal_credentials"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/sfns_text_medium"/>
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_google_plus"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/color_google_plus_btn"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/img_google_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_action_google_plus"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="65dp"/>
+
+            <TextView
+                android:id="@+id/txt_google_plus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login_with_google"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/img_google_plus"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sfns_display_regular"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_facebook"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/color_facebook_btn"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/img_facebook"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_action_facebook"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"/>
+
+            <TextView
+                android:id="@+id/txt_facebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login_with_facebook"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/img_facebook"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sfns_display_regular"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/congratulations_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="30dp"
+        android:visibility="gone"
+        android:layout_marginBottom="60dp">
+
+        <TextView
+            android:id="@+id/txt_congratulations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/congratulations"
+            android:textSize="35sp"
+            android:layout_gravity="center"
+            android:textColor="@color/text_color_blue"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/sfns_text_semibold"/>
+
+        <TextView
+            android:id="@+id/txt_login_successful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_blue"
+            android:text="@string/you_have_successfully_logged_in_b.pal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginBottom="25dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/sfns_text_medium"/>
+
+        <Button
+            android:id="@+id/btn_create_profile"
+            android:layout_width="1300dp"
+            android:layout_height="wrap_content"
+            android:text="@string/lets_create_b_pal_profile"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:background="@color/color_create_profile_btn"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/sfns_display_regular"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

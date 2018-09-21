@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">B Pal Application</string>
+    <string name="login_with_personal_credentials">Login with personal credentials!</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="b_pal">B.Pal</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="you_have_successfully_logged_in_b.pal">You have successfully\nlogged in B.Pal</string>
+    <string name="lets_create_b_pal_profile">Let\'s create B.Pal profile!</string>
+    <string name="create_profile">Create profile</string>
+    <string name="name">Name</string>
+    <string name="alok_dekhane">Alok Dekhane</string>
+    <string name="birthday">Birthday</string>
+    <string name="_01_01_1976">01/01/1976</string>
+    <string name="age">Age</string>
+    <string name="_41">41</string>
+    <string name="interest">Interests</string>
+    <string name="tech_related">(Tech Related)</string>
+    <string name="hobbies">(Hobbies)</string>
+    <string name="about_yourself">About yourself</string>
+    <string name="max_30_words">(Max 30 words)</string>
+    <string name="skip">Skip</string>
+    <string name="submit">Submit</string>
+    <array name="location">
+        <item> Location </item>
+        <item> Pune - 2 </item>
+        <item> Pune - 3 </item>
+    </array>
+    <array name="work_experience">
+        <item> Less than a year </item>
+        <item> 0 to 3 Years </item>
+        <item> 3 to 6 Years </item>
+        <item> 6 to 9 Years </item>
+        <item> 9 to 12ears </item>
+        <item> More than 2 Years </item>
+    </array>
 </resources>

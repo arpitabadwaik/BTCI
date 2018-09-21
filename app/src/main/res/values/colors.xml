@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="color_google_plus_btn">#DC4E41</color>
+    <color name="color_facebook_btn">#4D6FA9</color>
+    <color name="text_color_blue">#00BCD4 </color>
+    <color name="color_create_profile_btn">#DC630A </color>
+    <color name="color_name">#9B9B9B </color>
+    <color name="color_edit_name">#00BCD0 </color>
+    <color name="edit_text_line_color">#E7E7E7 </color>
 </resources>

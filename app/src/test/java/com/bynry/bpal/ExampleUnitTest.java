@@ -1,4 +1,4 @@
-package com.bynry.bpalapplication;
+package com.bynry.bpal;
 
 import org.junit.Test;
 
