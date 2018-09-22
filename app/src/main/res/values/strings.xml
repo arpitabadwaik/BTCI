@@ -22,16 +22,19 @@
     <string name="skip">Skip</string>
     <string name="submit">Submit</string>
     <array name="location">
-        <item> Location </item>
-        <item> Pune - 2 </item>
-        <item> Pune - 3 </item>
+        <item>Location</item>
+        <item>Pune - 2</item>
+        <item>Pune - 3</item>
     </array>
     <array name="work_experience">
-        <item> Less than a year </item>
-        <item> 0 to 3 Years </item>
-        <item> 3 to 6 Years </item>
-        <item> 6 to 9 Years </item>
-        <item> 9 to 12ears </item>
-        <item> More than 2 Years </item>
+        <item>Less than a year</item>
+        <item>0 to 3 Years</item>
+        <item>3 to 6 Years</item>
+        <item>6 to 9 Years</item>
+        <item>9 to 12ears</item>
+        <item>More than 2 Years</item>
     </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
