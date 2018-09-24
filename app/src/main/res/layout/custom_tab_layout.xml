@@ -5,5 +5,5 @@
         android:layout_height="wrap_content"
         android:id="@+id/tab"
         android:textColor="@color/white"
-        android:fontFamily="@font/sfns_display_regular"/>
+        android:fontFamily="@font/sfns_text_regular"/>
 

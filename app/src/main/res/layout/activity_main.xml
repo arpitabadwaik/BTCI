@@ -6,37 +6,78 @@
     android:layout_height="match_parent"
     tools:context="com.bynry.bpal.ui.activities.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/tab_name"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="vertical"
-        android:background="@drawable/ic_action_background_main_page">
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:background="@drawable/ic_action_background_main_page"
+        android:layout_marginBottom="5dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circle_view"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/ic_action_whats_up"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"/>
+        <RelativeLayout
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_hamburger_left"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_action_hamburger_left"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/txt_b_pal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="40sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/zarista"
+                android:text="@string/b_pal"/>
+
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_action_search"
+                android:layout_toRightOf="@+id/txt_b_pal"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="10dp"/>
+
+            <ImageView
+                android:id="@+id/img_hamburger_right"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_action_hamburger_right"
+                android:layout_toRightOf="@+id/img_search"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"/>
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/custom_tab_layout_height"
+            app:tabMode="fixed"
             app:tabGravity="fill"
-            app:tabMode="fixed" />
+            android:layout_marginHorizontal="10dp"/>
 
-
-
-
-    </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/view_pager"
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>
