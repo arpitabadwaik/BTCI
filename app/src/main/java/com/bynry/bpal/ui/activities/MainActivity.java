@@ -1,11 +1,16 @@
 package com.bynry.bpal.ui.activities;
 
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bynry.bpal.R;
@@ -15,11 +20,15 @@ import com.bynry.bpal.ui.fragments.ConnectFragment;
 import com.bynry.bpal.ui.fragments.TechBitesFragment;
 import com.bynry.bpal.ui.fragments.WhatsUpFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private NavigationView navigationViewLeft, navigationViewRight;
+    private ImageView imgLeftDrawer, imgRightDrawer, imeSearch, img;
+    private DrawerLayout drawerLayout;
+    private RelativeLayout relativeLayoutMain;
     private int[] tabIcons = {
             R.drawable.ic_action_whats_up,
             R.drawable.ic_action_tech_bites,
@@ -27,10 +36,17 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.ic_action_connect
     };
 
+    private boolean shouldLoadHomeFragOnBackPress = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        imgLeftDrawer = findViewById(R.id.img_left_drawer);
+        imgRightDrawer = findViewById(R.id.img_right_drawer);
+
+        relativeLayoutMain = findViewById(R.id.relative_layout_main);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -40,29 +56,16 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
+        navigationViewLeft = findViewById(R.id.nav_view_left);
+        navigationViewRight = findViewById(R.id.nav_view_right);
+
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-
-                tab.setIcon(R.drawable.ic_action_facebook);
-                /*int tabIconColor = ContextCompat.getColor(this, R.color.black);
-                tab.getIcon().setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN);*/
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-                //tab.setIcon(tabIconsUnSelected[tab.getPosition()]);
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+        imgLeftDrawer.setOnClickListener(this);
+        imgRightDrawer.setOnClickListener(this);
+        relativeLayoutMain.setOnClickListener(this);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -126,5 +129,15 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFrag(new BazaarFragment(), "Bazaar ");
         adapter.addFrag(new ConnectFragment(), "Connect ");
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == imgLeftDrawer ){
+            navigationViewLeft.setVisibility(View.VISIBLE);
+        }
+        else
+            if (view == imgRightDrawer)
+            navigationViewRight.setVisibility(View.VISIBLE);
     }
 }

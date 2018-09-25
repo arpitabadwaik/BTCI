@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item android:title="@string/refine_your_interest">
+            <menu>
+                <item
+                    android:id="@+id/nav_most_tending"
+                    android:title="@string/most_trending" />
+                <item
+                    android:id="@+id/nav_most_recent"
+                    android:title="@string/most_recent" />
+            </menu>
+        </item>
+        <item
+            android:id="@+id/nav_travel"
+            android:title="@string/travel" />
+
+        <item
+            android:id="@+id/nav_food"
+            android:title="@string/food" />
+
+        <item
+            android:id="@+id/nav_fitness_and_wellness"
+            android:title="@string/fitness_and_wellness" />
+
+        <item
+            android:id="@+id/nav_technology"
+            android:title="@string/technology" />
+        <item
+            android:id="@+id/nav_party"
+            android:title="@string/party" />
+    </group>
+</menu>

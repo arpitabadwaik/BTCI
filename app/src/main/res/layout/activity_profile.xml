@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/edit_text_line_color"
                 android:fontFamily="@font/sfns_display_medium"
-                android:hint="@string/alok_dekhane"
+                android:hint="@string/aalok_dekhane"
                 android:textColor="@color/color_edit_name"
                 android:textColorHint="@color/color_edit_name" />
 
