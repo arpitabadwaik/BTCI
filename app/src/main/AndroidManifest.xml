@@ -11,13 +11,13 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activities.SignUpActivity" />
         <activity android:name=".ui.activities.ProfileActivity" />
-        <activity android:name=".ui.activities.ViewPagerActivity" />
-        <activity android:name=".ui.activities.MainActivity">
+        <activity android:name=".ui.activities.LandingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 
