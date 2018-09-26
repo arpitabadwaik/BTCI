@@ -12,7 +12,6 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <RelativeLayout
-            android:id="@+id/layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -60,11 +59,10 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
+            android:id="@+id/tab_layout"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/custom_tab_layout_height" />
 

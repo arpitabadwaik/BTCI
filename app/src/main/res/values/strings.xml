@@ -60,4 +60,12 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="_24_percent">24 %</string>
+    <string name="complete">Complete</string>
+    <string name="cancel">Cancel</string>
+    <string name="apply">Apply</string>
+    <string name="whats_up">What\'s Up?</string>
+    <string name="subject">Subject</string>
+    <string name="related_keywords">Related Keywords</string>
+    <string name="compose">Compose</string>
 </resources>

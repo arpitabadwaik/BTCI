@@ -13,4 +13,6 @@
     <color name="color_edit_name">#00BCD0 </color>
     <color name="edit_text_line_color">#E7E7E7 </color>
     <color name="right_navigation_text_color_">#4A4A4A </color>
+    <color name="rating_bar_star_fill_color">#F76B1C </color>
+    <color name="edit_text_whats_up">#C1C1C1 </color>
 </resources>

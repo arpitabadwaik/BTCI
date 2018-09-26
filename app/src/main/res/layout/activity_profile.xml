@@ -106,6 +106,7 @@
             android:gravity="center">
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circle_img_profile_picture"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_gravity="center"
@@ -130,7 +131,7 @@
                 android:entries="@array/location" />
 
             <Spinner
-                android:id="@+id/work_experience"
+                android:id="@+id/spinner_work_experience"
                 style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -245,13 +246,13 @@
             android:weightSum="2">
 
             <Button
-                android:id="@+id/skip"
+                android:id="@+id/btn_skip"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_skip"
-                android:text="Skip"
+                android:text="@string/skip"
                 android:textColor="#DC630A" />
 
             <Button

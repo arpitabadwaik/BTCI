@@ -1,11 +1,16 @@
 package com.bynry.bpal.ui.activities;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.LayerDrawable;
 import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,7 +21,10 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bynry.bpal.R;
@@ -31,9 +39,16 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private NavigationView navigationDrawerLeft, navigationDrawerRight;
-    private ImageView imgLeftDrawer, imgRightDrawer, imgSearch;
+    private NavigationView navigationViewLeft, navigationViewRight;
+    private ImageView imgLeftDrawer, imgRightDrawer, imgSearch, imgProfilePicture;
     private DrawerLayout drawer;
+    private View headerLayoutLeft, headerLayoutRight;
+    private AppBarLayout appBarLayout;
+    private RatingBar ratingBar;
+    private TextView txtBPal, txtName, txtRefineYourInterest, txtMostTrending, txtMostRecent, txtTravel, txtFood, txtFitnessAndWellness, txtTechnology, txtParty;
+    private CheckBox chkMostTrending, chkMostRecent, chkTravel, chkFood, chkFitnessAndWellness, chkTechnology, chkParty;
+    private Button btnCancel, btnApply;
+    FloatingActionButton floatingActionButton;
     private int[] tabIcons = {
             R.drawable.ic_action_whats_up,
             R.drawable.ic_action_tech_bites,
@@ -46,21 +61,59 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
 
-        navigationDrawerLeft = findViewById(R.id.nav_view_left);
-        navigationDrawerRight = findViewById(R.id.nav_view_right);
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         toolbar = findViewById(R.id.toolbar);
+
+        tabLayout = findViewById(R.id.tab_layout);
+
+        viewPager = findViewById(R.id.viewpager);
+
+        navigationViewLeft = findViewById(R.id.nav_view_left);
+        navigationViewRight = findViewById(R.id.nav_view_right);
+
+        imgLeftDrawer = findViewById(R.id.img_left_drawer);
+        imgRightDrawer = findViewById(R.id.img_right_drawer);
+        imgSearch = findViewById(R.id.img_search);
+        imgProfilePicture = headerLayoutLeft.findViewById(R.id.img_profile_picture);
+
+        drawer = findViewById(R.id.drawer_layout);
+
+        headerLayoutLeft = navigationViewLeft.getHeaderView(0);
+        headerLayoutRight = navigationViewRight.getHeaderView(0);
+
+        appBarLayout = findViewById(R.id.app_bar_layout);
+
+        ratingBar = headerLayoutLeft.findViewById(R.id.rating_bar);
+
+        txtBPal = findViewById(R.id.txt_b_pal);
+        txtName = headerLayoutLeft.findViewById(R.id.txt_name);
+        txtRefineYourInterest = headerLayoutRight.findViewById(R.id.txt_refine_your_interest);
+        txtMostTrending = headerLayoutRight.findViewById(R.id.txt_most_trending);
+        txtMostRecent = headerLayoutRight.findViewById(R.id.txt_most_recent);
+        txtTravel = headerLayoutRight.findViewById(R.id.txt_travel);
+        txtFood = headerLayoutRight.findViewById(R.id.txt_food);
+        txtFitnessAndWellness = headerLayoutRight.findViewById(R.id.txt_fitness_and_wellness);
+        txtTechnology = headerLayoutRight.findViewById(R.id.txt_technology);
+        txtParty = headerLayoutRight.findViewById(R.id.txt_party);
+
+        chkMostTrending = headerLayoutRight.findViewById(R.id.chk_most_trending);
+        chkMostRecent = headerLayoutRight.findViewById(R.id.chk_most_recent);
+        chkTravel = headerLayoutRight.findViewById(R.id.chk_travel);
+        chkFood = headerLayoutRight.findViewById(R.id.chk_food);
+        chkFitnessAndWellness = headerLayoutRight.findViewById(R.id.chk_fitness_and_wellness);
+        chkTechnology = headerLayoutRight.findViewById(R.id.chk_technology);
+        chkParty = headerLayoutRight.findViewById(R.id.chk_party);
+
+        btnCancel = findViewById(R.id.btn_cancel);
+        btnApply = findViewById(R.id.btn_apply);
+
+        floatingActionButton = findViewById(R.id.floating_action_btn);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(null);
 
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
@@ -73,14 +126,13 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
             }
         });
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        navigationDrawerLeft.setNavigationItemSelectedListener(this);
-        navigationDrawerRight.setNavigationItemSelectedListener(this);
+        navigationViewLeft.setNavigationItemSelectedListener(this);
+        navigationViewRight.setNavigationItemSelectedListener(this);
 
 
     }
@@ -96,7 +148,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
 
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.ashich, menu);
+        getMenuInflater().inflate(R.menu.activity_landing_left_drawer, menu);
         return true;
     }
 
@@ -119,7 +171,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+       /* if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
@@ -131,7 +183,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
 
         } else if (id == R.id.nav_send) {
 
-        }
+        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
