@@ -16,4 +16,6 @@
     <color name="rating_bar_star_fill_color">#F76B1C </color>
     <color name="edit_text_whats_up">#C1C1C1 </color>
     <color name="profile_picture_border">#284061 </color>
+    <color name="write_something">#9E9E9E</color>
+    <color name="background_color_profile">#EEFDFF </color>
 </resources>

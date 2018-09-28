@@ -12,4 +12,9 @@
         <item name="android:colorControlNormal">#FAD961</item>
     </style>
 
+    <style name="ThemeRatingBar" parent="Theme.AppCompat">
+        <item name="colorAccent">#4A4A4A</item>
+        <item name="android:colorControlNormal">#FFFFFF</item>
+    </style>
+
 </resources>

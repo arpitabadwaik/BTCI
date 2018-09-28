@@ -1,272 +1,315 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color_profile"
     tools:context="com.bynry.bpal.ui.activities.ProfileActivity">
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/linear_layout_app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
+        android:layout_height="60dp"
+        android:background="@drawable/ic_action_background_profile"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:id="@+id/linear_layout_create_profile"
+        <ImageView
+            android:id="@+id/img_back_arrow_profile"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_action_back_arrow" />
+
+        <TextView
+            android:id="@+id/txt_profile"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/ic_action_background_profile"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/txt_profile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:fontFamily="@font/sfns_display_medium"
-                android:text="@string/create_profile"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linear_layout_upper"
-            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/linear_layout_create_profile"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/sfns_display_medium"
+            android:text="Aalok's Profile"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/txt_name"
-                android:layout_width="match_parent"
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_upper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_layout_app_bar"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp">
+
+        <RelativeLayout
+            android:id="@+id/layout_upper_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/sfns_display_regular"
-                android:text="@string/name"
-                android:textColor="@color/color_name" />
+                android:background="@drawable/round_profile_picture"
+                android:gravity="center">
 
-            <EditText
-                android:id="@+id/edt_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/edit_text_line_color"
-                android:fontFamily="@font/sfns_display_medium"
-                android:hint="@string/aalok_dekhane"
-                android:textColor="@color/color_edit_name"
-                android:textColorHint="@color/color_edit_name" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/circle_img_profile_picture"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_action_profile_picture" />
 
-            <TextView
-                android:id="@+id/txt_birthday"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sfns_display_regular"
-                android:text="@string/birthday"
-                android:textColor="@color/color_name" />
+            </LinearLayout>
 
-            <EditText
-                android:id="@+id/edt_birthday"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/edit_text_line_color"
-                android:fontFamily="@font/sfns_display_medium"
-                android:hint="@string/_01_01_1976"
-                android:textColor="@color/color_edit_name"
-                android:textColorHint="@color/color_edit_name" />
+            <ImageView
+                android:id="@+id/img_edit_picture"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="80dp"
+                android:src="@drawable/ic_action_edit_picture" />
 
-            <TextView
-                android:id="@+id/txt_age"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sfns_display_regular"
-                android:text="@string/age"
-                android:textColor="@color/color_name" />
-
-            <EditText
-                android:id="@+id/edt_age"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/edit_text_line_color"
-                android:fontFamily="@font/sfns_display_medium"
-                android:hint="@string/_41"
-                android:textColor="@color/color_edit_name"
-                android:textColorHint="@color/color_edit_name" />
-
-        </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
+            android:id="@+id/layout_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/linear_layout_create_profile"
-            android:layout_marginTop="40dp"
-            android:layout_toRightOf="@id/linear_layout_upper"
-            android:background="@drawable/round_profile_picture"
-            android:gravity="center">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circle_img_profile_picture"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_action_profile_picture" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linear_layout_lower"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linear_layout_upper"
-            android:layout_marginHorizontal="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@id/layout_upper_left"
             android:orientation="vertical">
 
-            <Spinner
-                android:id="@+id/spinner_location"
-                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/edit_text_line_color"
-                android:entries="@array/location" />
-
-            <Spinner
-                android:id="@+id/spinner_work_experience"
-                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/edit_text_line_color"
-                android:entries="@array/work_experience" />
-
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/txt_interest_tech_related"
+                    android:id="@+id/txt_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sfns_display_regular"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sfns_text_medium"
+                    android:text="@string/aalok_dekhane"
+                    android:textColor="@color/text_color_blue"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/img_single_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_action_single_badge" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfns_text_medium"
+                    android:text="@string/email"
+                    android:textColor="@color/right_navigation_text_color_" />
+
+                <TextView
+                    android:id="@+id/txt_show_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/sfns_text_medium"
+                    android:text="aalok.negi@gmail.com"
+                    android:textColor="@color/right_navigation_text_color_" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_mobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfns_text_medium"
+                    android:text="@string/mobile"
+                    android:textColor="@color/right_navigation_text_color_" />
+
+                <TextView
+                    android:id="@+id/txt_show_mobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/sfns_text_medium"
+                    android:text="+91 9823 23 50 03"
+                    android:textColor="@color/right_navigation_text_color_" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_interest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfns_text_medium"
                     android:text="@string/interest"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/right_navigation_text_color_" />
 
-                <TextView
-                    android:id="@+id/txt_tech_related"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/sfns_display_regular"
-                    android:text="@string/tech_related"
-                    android:textColor="@color/color_name" />
-
-            </LinearLayout>
-
-
-            <EditText
-                android:id="@+id/edt_interest_tech_related"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/edit_text_line_color"
-                android:fontFamily="@font/sfns_display_regular"
-                android:textColor="@color/black" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_interest_hobbies"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sfns_display_regular"
-                    android:text="@string/interest"
-                    android:textColor="@color/black" />
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
-                <TextView
-                    android:id="@+id/txt_hobbies"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/sfns_display_regular"
-                    android:text="@string/hobbies"
-                    android:textColor="@color/color_name" />
+                    <TextView
+                        android:id="@+id/txt_show_interests"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sfns_text_medium"
+                        android:maxLines="2"
+                        android:text="IOT, InfoTech"
+                        android:textColor="@color/right_navigation_text_color_" />
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/txt_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sfns_text_regular"
+                        android:text="@string/more"
+                        android:textColor="@color/color_create_profile_btn" />
 
-            <EditText
-                android:id="@+id/edt_interest_hobbies"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/edit_text_line_color"
-                android:fontFamily="@font/sfns_display_regular"
-                android:textColor="@color/black" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_about_yourself"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/sfns_display_regular"
-                    android:text="@string/about_yourself"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:id="@+id/txt_max_30_words"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/sfns_display_regular"
-                    android:text="@string/max_30_words"
-                    android:textColor="@color/color_name" />
+                </LinearLayout>
 
             </LinearLayout>
-
-            <EditText
-                android:id="@+id/edt_about_yourself"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/edit_text_line_color"
-                android:fontFamily="@font/sfns_display_regular"
-                android:maxLines="3"
-                android:textColor="@color/black" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@id/linear_layout_lower"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="5dp"
-            android:weightSum="2">
-
-            <Button
-                android:id="@+id/btn_skip"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_marginRight="20dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_skip"
-                android:text="@string/skip"
-                android:textColor="#DC630A" />
-
-            <Button
-                android:id="@+id/btn_submit"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/color_create_profile_btn"
-                android:text="@string/submit"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
 
         </LinearLayout>
 
     </RelativeLayout>
 
-</ScrollView>
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@id/layout_upper"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/edit_text_line_color" />
+
+    <LinearLayout
+        android:id="@+id/layout_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_media_by_you"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfns_text_medium"
+                android:text="@string/media_by_you"
+                android:textColor="@color/right_navigation_text_color_"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_media_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfns_text_medium"
+                android:text=" (58)"
+                android:textColor="@color/right_navigation_text_color_"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_action_image_1" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_action_image_2" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_action_image_3" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_action_image_4" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/edit_text_line_color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_lower"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_middle"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_postst_by_you"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfns_text_medium"
+            android:text="@string/posts_by_you"
+            android:textColor="@color/right_navigation_text_color_"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_posts_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfns_text_medium"
+            android:text=" (14)"
+            android:textColor="@color/right_navigation_text_color_"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

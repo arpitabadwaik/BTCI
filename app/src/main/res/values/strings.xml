@@ -21,21 +21,6 @@
     <string name="max_30_words">(Max 30 words)</string>
     <string name="skip">Skip</string>
     <string name="submit">Submit</string>
-    <array name="location">
-        <item>Location</item>
-        <item>Pune - 2</item>
-        <item>Pune - 3</item>
-    </array>
-    <array name="work_experience">
-        <item>Less than a year</item>
-        <item>0 to 3 Years</item>
-        <item>3 to 6 Years</item>
-        <item>6 to 9 Years</item>
-        <item>9 to 12ears</item>
-        <item>More than 2 Years</item>
-    </array>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
@@ -68,4 +53,29 @@
     <string name="subject">Subject</string>
     <string name="related_keywords">Related Keywords</string>
     <string name="compose">Compose</string>
+    <string name="write_something">Write something...</string>
+    <string name="QUIZ">QUIZ:</string>
+    <string name="_17_july_2017">" "17july 2017</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="email">Email:</string>
+    <string name="mobile">Mobile:</string>
+    <string name="interests">Interests:</string>
+    <string name="more">" "more..</string>
+    <string name="media_by_you">Media by you</string>
+    <string name="posts_by_you">Posts by you</string>
+    <string name="tell_us_more">Tell us more...</string>
+    <string name="call">Call</string>
+    <array name="location">
+        <item>Location</item>
+        <item>Pune - 2</item>
+        <item>Pune - 3</item>
+    </array>
+    <array name="work_experience">
+        <item>Less than a year</item>
+        <item>0 to 3 Years</item>
+        <item>3 to 6 Years</item>
+        <item>6 to 9 Years</item>
+        <item>9 to 12ears</item>
+        <item>More than 2 Years</item>
+    </array>
 </resources>

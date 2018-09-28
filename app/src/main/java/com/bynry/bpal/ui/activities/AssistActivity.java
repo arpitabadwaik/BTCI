@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.bynry.bpal.R;
 
-public class ProfileActivity extends AppCompatActivity {
+public class AssistActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_assist);
     }
 }

@@ -10,18 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activities.SignUpActivity" />
-        <activity android:name=".ui.activities.ProfileActivity" />
+        <activity android:name=".ui.activities.AddEditProfileActivity" />
         <activity android:name=".ui.activities.LandingActivity">
-
-        </activity>
-        <activity android:name=".ui.activities.StartDiscussionActivity" />
-        <activity android:name=".ui.activities.DiscussionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activities.StartDiscussionActivity" />
+        <activity android:name=".ui.activities.DiscussionActivity" />
+        <activity android:name=".ui.activities.ProfileActivity" />
+        <activity android:name=".ui.activities.AssistActivity"></activity>
     </application>
 
 </manifest>

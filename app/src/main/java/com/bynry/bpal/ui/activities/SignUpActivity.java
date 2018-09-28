@@ -57,7 +57,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         }
         else
             if (view == btnCreateProfile){
-                Intent intent = new Intent(this, ProfileActivity.class);
+                Intent intent = new Intent(this, AddEditProfileActivity.class);
                 startActivity(intent);
             }
     }
