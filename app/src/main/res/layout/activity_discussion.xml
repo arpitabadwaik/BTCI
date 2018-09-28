@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bynry.bpal.ui.activities.DiscussionActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_action_background_profile">
+
+        <ImageView
+            android:id="@+id/img_back_arrow"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginVertical="20dp"
+            android:src="@drawable/ic_action_back_arrow" />
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginVertical="10dp"
+            android:layout_toRightOf="@+id/img_back_arrow">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_profile_picture_user"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_action_profile_picture" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/img_profile_picture_user"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_whats_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfns_text_medium"
+                    android:text="@string/aalok_dekhane"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/txt_caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfns_text_regular"
+                    android:text="Worth visiting place : Mahabaleshwar :)"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_attach"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginVertical="20dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_action_attach_white"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

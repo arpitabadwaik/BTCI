@@ -1,5 +1,6 @@
 package com.bynry.bpal.ui.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
@@ -26,23 +27,23 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
 import com.bynry.bpal.R;
+
 import com.bynry.bpal.ui.adapters.ViewPagerAdapter;
 import com.bynry.bpal.ui.fragments.BazaarFragment;
 import com.bynry.bpal.ui.fragments.ConnectFragment;
 import com.bynry.bpal.ui.fragments.TechBitesFragment;
 import com.bynry.bpal.ui.fragments.WhatsUpFragment;
 
-public class LandingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class LandingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private NavigationView navigationViewLeft, navigationViewRight;
+    private View headerLayoutLeft, headerLayoutRight;
     private ImageView imgLeftDrawer, imgRightDrawer, imgSearch, imgProfilePicture;
     private DrawerLayout drawer;
-    private View headerLayoutLeft, headerLayoutRight;
     private AppBarLayout appBarLayout;
     private RatingBar ratingBar;
     private TextView txtBPal, txtName, txtRefineYourInterest, txtMostTrending, txtMostRecent, txtTravel, txtFood, txtFitnessAndWellness, txtTechnology, txtParty;
@@ -70,15 +71,15 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         navigationViewLeft = findViewById(R.id.nav_view_left);
         navigationViewRight = findViewById(R.id.nav_view_right);
 
+        headerLayoutLeft = navigationViewLeft.getHeaderView(0);
+        headerLayoutRight = navigationViewRight.getHeaderView(0);
+
         imgLeftDrawer = findViewById(R.id.img_left_drawer);
         imgRightDrawer = findViewById(R.id.img_right_drawer);
         imgSearch = findViewById(R.id.img_search);
         imgProfilePicture = headerLayoutLeft.findViewById(R.id.img_profile_picture);
 
         drawer = findViewById(R.id.drawer_layout);
-
-        headerLayoutLeft = navigationViewLeft.getHeaderView(0);
-        headerLayoutRight = navigationViewRight.getHeaderView(0);
 
         appBarLayout = findViewById(R.id.app_bar_layout);
 
@@ -117,14 +118,10 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-        FloatingActionButton floatingActionButton = findViewById(R.id.floating_action_btn);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show()*/;
+
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -133,6 +130,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
 
         navigationViewLeft.setNavigationItemSelectedListener(this);
         navigationViewRight.setNavigationItemSelectedListener(this);
+        floatingActionButton.setOnClickListener(this);
 
 
     }
@@ -221,5 +219,13 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         adapter.addFrag(new BazaarFragment(), "Bazaar ");
         adapter.addFrag(new ConnectFragment(), "Connect ");
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == floatingActionButton){
+            Intent intent = new Intent(this, StartDiscussionActivity.class);
+            startActivity(intent);
+        }
     }
 }

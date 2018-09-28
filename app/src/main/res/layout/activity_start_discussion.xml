@@ -7,7 +7,7 @@
     tools:context="com.bynry.bpal.ui.activities.StartDiscussionActivity">
 
         <RelativeLayout
-            android:id="@+id/layout_upper"
+            android:id="@+id/layout_header"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_alignParentTop="true"
@@ -22,7 +22,7 @@
                 android:src="@drawable/ic_action_back_arrow" />
 
             <TextView
-                android:id="@+id/txt_attach"
+                android:id="@+id/txt_whats_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -30,16 +30,17 @@
                 android:layout_marginTop="2dp"
                 android:text="@string/whats_up"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="22sp"
+                android:fontFamily="@font/sfns_text_medium"
                 android:layout_toRightOf="@+id/img_back_arrow"/>
 
             <ImageView
                 android:id="@+id/img_attach"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/ic_action_attach_white"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginVertical="20dp" />
 
         </RelativeLayout>
@@ -48,43 +49,53 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/layout_upper" >
+        android:layout_below="@+id/layout_header" >
 
         <EditText
             android:id="@+id/edt_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/subject"
+            android:fontFamily="@font/sfns_display_regular"
             android:textColor="@color/edit_text_whats_up"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/edit_text_line_color"/>
 
         <EditText
             android:id="@+id/edt_related_keywords"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/related_keywords"
+            android:fontFamily="@font/sfns_display_regular"
             android:textColor="@color/edit_text_whats_up"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/edit_text_line_color"/>
 
         <EditText
             android:id="@+id/edt_compose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/compose"
+            android:backgroundTint="@color/edit_text_line_color"
+            android:fontFamily="@font/sfns_display_regular"
+            android:maxLines="5"
+            android:hint="@string/compose"
             android:textColor="@color/edit_text_whats_up"
-            android:layout_marginTop="5dp"
-            android:maxLines="5"/>
+            android:paddingBottom="150dp"
+            android:layout_marginTop="15dp"/>
 
         <Button
-            android:id="@+id/btn_submit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/btn_discussion_submit"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@color/color_create_profile_btn"
             android:text="@string/submit"
             android:textAllCaps="false"
             android:layout_gravity="right"
-            android:textColor="@color/white" />
+            android:layout_marginRight="30dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/sfns_display_medium"
+            android:layout_marginTop="10dp"/>
 
     </LinearLayout>
 

@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.bynry.bpal.R;
 
+
 public class ProfileActivity extends AppCompatActivity {
 
     private LinearLayout linearLayoutCreateProfile, linearLayoutUpper, linearLayoutLower;

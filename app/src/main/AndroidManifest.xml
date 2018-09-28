@@ -12,13 +12,16 @@
         <activity android:name=".ui.activities.SignUpActivity" />
         <activity android:name=".ui.activities.ProfileActivity" />
         <activity android:name=".ui.activities.LandingActivity">
+
+        </activity>
+        <activity android:name=".ui.activities.StartDiscussionActivity" />
+        <activity android:name=".ui.activities.DiscussionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.StartDiscussionActivity"></activity>
     </application>
 
 </manifest>
