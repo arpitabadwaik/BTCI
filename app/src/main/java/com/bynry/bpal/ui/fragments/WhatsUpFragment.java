@@ -4,7 +4,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -12,27 +11,28 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bynry.bpal.R;
+import com.bynry.bpal.ui.activities.LandingActivity;
+import com.bynry.bpal.ui.activities.SignUpActivity;
+import com.bynry.bpal.ui.adapters.WhatsUpFragmentAdapter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class WhatsUpFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private ArrayList userNames = new ArrayList();
-    private ArrayList personImages = new ArrayList();
+    private ArrayList<String> userNames;
+    Context context;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
+   /* // TODO: Rename and change types of parameters
     private String mParam1;
-    private String mParam2;
+    private String mParam2;*/
 
     private OnFragmentInteractionListener mListener;
 
     public WhatsUpFragment() {
-        // Required empty public constructor
     }
 
     // TODO: Rename and change types and number of parameters
@@ -49,18 +49,32 @@ public class WhatsUpFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getArguments() != null) {
+        /*if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        }*/
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_whats_up, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view_whats_up);
+
+        context = getContext();
+
+        StaggeredGridLayoutManager layout =  new StaggeredGridLayoutManager(3,1);
+        recyclerView.setLayoutManager(layout);
+
+        userNames = new ArrayList<>();
+
+        userNames.add("Swaraj Negi");
+        userNames.add("Bhaskar Negi");
+        userNames.add("Bhakti Negi");
+        userNames.add("Swati Negi");
+
+        WhatsUpFragmentAdapter myAdapter = new WhatsUpFragmentAdapter(userNames, context);
+        recyclerView.setAdapter(myAdapter);
+
         return view;
     }
 

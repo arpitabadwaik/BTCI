@@ -1,5 +1,6 @@
 package com.bynry.bpal.ui.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
@@ -35,6 +36,7 @@ import android.widget.Toast;
 import com.bynry.bpal.R;
 
 import com.bynry.bpal.ui.adapters.ViewPagerAdapter;
+import com.bynry.bpal.ui.adapters.WhatsUpFragmentAdapter;
 import com.bynry.bpal.ui.fragments.BazaarFragment;
 import com.bynry.bpal.ui.fragments.ConnectFragment;
 import com.bynry.bpal.ui.fragments.MyFeedbackFragment;
@@ -42,11 +44,13 @@ import com.bynry.bpal.ui.fragments.QuizFragment;
 import com.bynry.bpal.ui.fragments.TechBitesFragment;
 import com.bynry.bpal.ui.fragments.WhatsUpFragment;
 
+import java.util.ArrayList;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class LandingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, QuizFragment.OnFragmentInteractionListener, MyFeedbackFragment.OnFragmentInteractionListener {
 
-    private StaggeredGridLayoutManager staggeredGridLayoutManager;
+    private Context context;
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -68,10 +72,34 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
             R.drawable.ic_action_connect
     };
 
+    /*private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private ArrayList<String> userNames;
+*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
+
+       /* mRecyclerView = findViewById(R.id.recycler_view_whats_up);
+
+        mLayoutManager = new StaggeredGridLayoutManager(3,1 );
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        context= this;
+
+        userNames = new ArrayList<>();
+
+        userNames.add("Swaraj Negi");
+        userNames.add("Bhaskar Negi");
+        userNames.add("Bhakti Negi");
+        userNames.add("Swati Negi");
+
+        // specify an adapter (see also next example)
+        mAdapter = new WhatsUpFragmentAdapter(userNames, context);
+        mRecyclerView.setAdapter(mAdapter);*/
 
         toolbar = findViewById(R.id.toolbar);
 

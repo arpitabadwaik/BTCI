@@ -9,15 +9,16 @@ import android.widget.TextView;
 
 import com.bynry.bpal.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WhatsUpFragmentAdapter extends RecyclerView.Adapter<WhatsUpFragmentAdapter.ViewHolder> {
 
-    private List<String> itemList;
+    private ArrayList<String> userNames;
     private Context context;
 
-    public WhatsUpFragmentAdapter(List<String> itemList, Context context) {
-        this.itemList = itemList;
+    public WhatsUpFragmentAdapter(ArrayList<String> userNames, Context context) {
+        this.userNames = userNames;
         this.context = context;
     }
 
@@ -30,22 +31,22 @@ public class WhatsUpFragmentAdapter extends RecyclerView.Adapter<WhatsUpFragment
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        //holder.txtDemo.setText(itemList.get(position).getName());
+        holder.txtNameOfUser.setText(userNames.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return this.itemList.size();
+        return this.userNames.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtDemo, txtMobileNo, txtAddress;
+        TextView txtNameOfUser;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            txtDemo = itemView.findViewById(R.id.txt_demo);
+            txtNameOfUser = itemView.findViewById(R.id.txt_name_of_user);
         }
     }
 }
