@@ -16,7 +16,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,6 +46,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class LandingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, QuizFragment.OnFragmentInteractionListener, MyFeedbackFragment.OnFragmentInteractionListener {
 
+    private StaggeredGridLayoutManager staggeredGridLayoutManager;
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -63,21 +68,6 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
             R.drawable.ic_action_connect
     };
 
-    private static final String TAG_HOME = "home";
-    private static final String TAG_PROFILE = "profile";
-    private static final String TAG_QUIZ = "quiz";
-    private static final String TAG_MY_FEEDBACK = "my feedback";
-    private static final String TAG_SAVED_POSTS_AND_ADS= "saved posts and ads";
-    private static final String TAG_SETTINGS = "settings";
-    private static final String TAG_ASSIST = "assist";
-    private static final String TAG_LOGOUT = "logout";
-    public static String CURRENT_TAG = TAG_HOME;
-
-    // flag to load home fragment when user presses back key
-    private boolean shouldLoadHomeFragOnBackPress = true;
-    private Handler mHandler;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,14 +85,14 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         headerLayoutLeft = navigationViewLeft.getHeaderView(0);
         headerLayoutRight = navigationViewRight.getHeaderView(0);
 
-        imgLeftDrawer = findViewById(R.id.img_left_drawer);
-        imgRightDrawer = findViewById(R.id.img_right_drawer);
-        imgSearch = findViewById(R.id.img_search);
+        appBarLayout = findViewById(R.id.app_bar_layout);
+
+        imgLeftDrawer = appBarLayout.findViewById(R.id.img_left_drawer);
+        imgRightDrawer = appBarLayout.findViewById(R.id.img_right_drawer);
+        imgSearch = appBarLayout.findViewById(R.id.img_search);
         imgProfilePicture = headerLayoutLeft.findViewById(R.id.img_profile_picture);
 
         drawer = findViewById(R.id.drawer_layout);
-
-        appBarLayout = findViewById(R.id.app_bar_layout);
 
         ratingBar = headerLayoutLeft.findViewById(R.id.rating_bar);
 
@@ -130,6 +120,9 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
 
         floatingActionButton = findViewById(R.id.floating_action_btn);
 
+       /* staggeredGridLayoutManager = new StaggeredGridLayoutManager(3,1);
+        recyclerViewWhatsUp.setLayoutManager(staggeredGridLayoutManager);
+*/
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(null);
@@ -147,6 +140,9 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         navigationViewLeft.setNavigationItemSelectedListener(this);
         navigationViewRight.setNavigationItemSelectedListener(this);
         floatingActionButton.setOnClickListener(this);
+        imgLeftDrawer.setOnClickListener(this);
+        imgRightDrawer.setOnClickListener(this);
+        imgSearch.setOnClickListener(this);
     }
 
     public void onBackPressed() {
@@ -186,20 +182,23 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         Class fragmentClass;
 
         if (id == R.id.nav_home) {
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_profile) {
-           Intent intent = new Intent(this, ProfileActivity.class);
-           startActivity(intent);
+            Intent intent = new Intent(this, AddEditProfileActivity.class);
+            intent.putExtra("from","EditProfile");
+            startActivity(intent);
 
         } else if (id == R.id.nav_quiz) {
             FragmentManager fm = getSupportFragmentManager();
             QuizFragment editNameDialogFragment = QuizFragment.newInstance("Some title", "gh");
-            editNameDialogFragment.show(fm, "fragment_edit_name");
+            editNameDialogFragment.show(fm, "");
 
         } else if (id == R.id.nav_my_feedback) {
             FragmentManager fm = getSupportFragmentManager();
             MyFeedbackFragment editNameDialogFragment = MyFeedbackFragment.newInstance("Some title", "gh");
-            editNameDialogFragment.show(fm, "fragment_edit_name");
+            editNameDialogFragment.show(fm, "");
 
         } else if (id == R.id.nav_saved_posts_and_ads) {
             Toast.makeText(this, "You clicked on Saved posts and ads", Toast.LENGTH_SHORT).show();
@@ -257,6 +256,13 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
     public void onClick(View view) {
         if (view == floatingActionButton){
             Intent intent = new Intent(this, StartDiscussionActivity.class);
+            startActivity(intent);
+        }else if (view == imgLeftDrawer){
+            drawer.openDrawer(Gravity.LEFT);
+        }else if (view == imgRightDrawer){
+            drawer.openDrawer(Gravity.RIGHT);
+        }else if (view == imgSearch){
+            Intent intent = new Intent(this, SearchActivity.class);
             startActivity(intent);
         }
     }

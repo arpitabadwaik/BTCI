@@ -65,6 +65,8 @@
     <string name="posts_by_you">Posts by you</string>
     <string name="tell_us_more">Tell us more...</string>
     <string name="call">Call</string>
+    <string name="save">Save</string>
+    <string name="recent_searches">Recent Searches</string>
     <array name="location">
         <item>Location</item>
         <item>Pune - 2</item>
