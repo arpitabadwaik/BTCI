@@ -8,17 +8,19 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bynry.bpal.R;
+import com.bynry.bpal.ui.models.WhatsUpModel;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class WhatsUpFragmentAdapter extends RecyclerView.Adapter<WhatsUpFragmentAdapter.ViewHolder> {
 
-    private ArrayList<String> userNames;
+    private ArrayList<WhatsUpModel> whatsUpList;
     private Context context;
 
-    public WhatsUpFragmentAdapter(ArrayList<String> userNames, Context context) {
-        this.userNames = userNames;
+    public WhatsUpFragmentAdapter(ArrayList<WhatsUpModel> whatsUpList, Context context) {
+        this.whatsUpList = whatsUpList;
         this.context = context;
     }
 
@@ -31,22 +33,39 @@ public class WhatsUpFragmentAdapter extends RecyclerView.Adapter<WhatsUpFragment
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.txtNameOfUser.setText(userNames.get(position));
+
+        holder.txtNameOfUser.setText(whatsUpList.get(position).getName());
+        holder.txtSubject.setText(whatsUpList.get(position).getSubject());
+        holder.txtDate.setText(whatsUpList.get(position).getDate());
+        holder.txtCaption.setText(whatsUpList.get(position).getCaption());
+        holder.txtDetails.setText(whatsUpList.get(position).getDetails());
+        holder.txtNoOfComments.setText(whatsUpList.get(position).getNoOfComments());
+        holder.txtLastCommentDate.setText(whatsUpList.get(position).getLastCommentDate());
+
     }
 
     @Override
     public int getItemCount() {
-        return this.userNames.size();
+        return this.whatsUpList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtNameOfUser;
+        CircleImageView circleImgUserImage;
+        TextView txtNameOfUser, txtSubject, txtDate, txtCaption, txtDetails, txtNoOfComments, txtLastCommentDate;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
+            circleImgUserImage = itemView.findViewById(R.id.circle_img_user_image);
+
             txtNameOfUser = itemView.findViewById(R.id.txt_name_of_user);
+            txtSubject = itemView.findViewById(R.id.txt_subject);
+            txtDate = itemView.findViewById(R.id.txt_date);
+            txtCaption = itemView.findViewById(R.id.txt_caption);
+            txtDetails = itemView.findViewById(R.id.txt_details);
+            txtNoOfComments = itemView.findViewById(R.id.txt_no_of_comments);
+            txtLastCommentDate = itemView.findViewById(R.id.txt_last_comment_date);
         }
     }
 }

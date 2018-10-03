@@ -2,13 +2,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color_profile"
     tools:context="com.bynry.bpal.ui.fragments.TechBitesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        android:gravity="center"/>
+        android:orientation="vertical"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfns_disply_bold"
+            android:text="Today, 13th july 2017"
+            android:textColor="@color/text_color_blue"
+            android:textSize="20sp"
+            android:layout_marginVertical="5dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_tech_bites"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
 
 </FrameLayout>

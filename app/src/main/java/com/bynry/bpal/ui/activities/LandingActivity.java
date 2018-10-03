@@ -72,34 +72,10 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
             R.drawable.ic_action_connect
     };
 
-    /*private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private ArrayList<String> userNames;
-*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
-
-       /* mRecyclerView = findViewById(R.id.recycler_view_whats_up);
-
-        mLayoutManager = new StaggeredGridLayoutManager(3,1 );
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        context= this;
-
-        userNames = new ArrayList<>();
-
-        userNames.add("Swaraj Negi");
-        userNames.add("Bhaskar Negi");
-        userNames.add("Bhakti Negi");
-        userNames.add("Swati Negi");
-
-        // specify an adapter (see also next example)
-        mAdapter = new WhatsUpFragmentAdapter(userNames, context);
-        mRecyclerView.setAdapter(mAdapter);*/
 
         toolbar = findViewById(R.id.toolbar);
 
@@ -148,9 +124,6 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
 
         floatingActionButton = findViewById(R.id.floating_action_btn);
 
-       /* staggeredGridLayoutManager = new StaggeredGridLayoutManager(3,1);
-        recyclerViewWhatsUp.setLayoutManager(staggeredGridLayoutManager);
-*/
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(null);

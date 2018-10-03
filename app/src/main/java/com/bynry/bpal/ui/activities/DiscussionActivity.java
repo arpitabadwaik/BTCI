@@ -22,6 +22,7 @@ public class DiscussionActivity extends AppCompatActivity {
     private CardView cardWriteMessage;
     private ImageView imgAttach, imgMessageSend;
     private EditText edtWriteSomething;
+    private String caption;
 
 
     @Override
@@ -45,5 +46,13 @@ public class DiscussionActivity extends AppCompatActivity {
         imgAttach = findViewById(R.id.img_attach);
         imgMessageSend = findViewById(R.id.img_message_send);
         edtWriteSomething = findViewById(R.id.edt_write_something);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras == null)
+            caption = null;
+        else
+            caption = extras.getString("caption");
+
+        txtCaption.setText(caption);
     }
 }
