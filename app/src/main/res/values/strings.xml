@@ -67,6 +67,12 @@
     <string name="call">Call</string>
     <string name="save">Save</string>
     <string name="recent_searches">Recent Searches</string>
+    <string name="today">Today</string>
+    <string name="_assist">Assist</string>
+    <string name="comming_week">Coming Week</string>
+    <string name="more_tech_bites">More Tech Bites</string>
+    <string name="like">Like</string>
+    <string name="comment">Comment</string>
     <array name="location">
         <item>Location</item>
         <item>Pune - 2</item>

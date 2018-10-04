@@ -27,7 +27,7 @@ public class StartDiscussionActivity extends AppCompatActivity implements View.O
 
         layoutHeader = findViewById(R.id.layout_header);
 
-        imgBackArrow = findViewById(R.id.img_back_arrow);
+        imgBackArrow = findViewById(R.id.img_back_arrow_start_discussion);
         imgAttach = findViewById(R.id.img_attach);
 
         txtWhatsUp = findViewById(R.id.txt_whats_up);

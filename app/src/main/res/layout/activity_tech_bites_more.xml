@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bynry.bpal.ui.activities.TechBitesMoreActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_action_background_profile">
+
+        <ImageView
+            android:id="@+id/img_back_arrow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="20dp"
+            android:src="@drawable/ic_action_back_arrow" />
+
+        <TextView
+            android:id="@+id/txt_more_tech_bites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginVertical="20dp"
+            android:layout_toRightOf="@+id/img_back_arrow"
+            android:fontFamily="@font/sfns_text_medium"
+            android:text="@string/more_tech_bites"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_header"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="15dp">
+
+        <TextView
+            android:id="@+id/txt_heading_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfns_text_medium"
+            android:text="Economic concepts consumers needs to know"
+            android:textColor="@color/right_navigation_text_color_"
+            android:textSize="23sp" />
+
+        <TextView
+            android:id="@+id/txt_date_of_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_heading_text"
+            android:fontFamily="@font/sfns_text_regular"
+            android:text="13th july 2017"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/color_name" />
+
+        <TextView
+            android:id="@+id/txt_description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_date_of_post"
+            android:fontFamily="@font/sfns_text_light"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
+            android:textColor="@color/right_navigation_text_color_" />
+
+        <LinearLayout
+            android:id="@+id/linear_layout_image_video_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_description_text"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_action_image_1" />
+
+            <ImageView
+                android:id="@+id/video_view"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_action_image_4"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_like_comment_share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_layout_image_video_view"
+            android:layout_marginVertical="20dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_like"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_action_like_orange_hollow" />
+
+                <TextView
+                    android:id="@+id/txt_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sfns_text_regular"
+                    android:text="@string/like"
+                    android:textColor="@color/color_name" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_comment"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_action_comment_orange_hollow" />
+
+                <TextView
+                    android:id="@+id/txt_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sfns_text_regular"
+                    android:text="@string/comment"
+                    android:textColor="@color/color_name" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_save"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_action_save_post_hollow" />
+
+                <TextView
+                    android:id="@+id/txt_save_post"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sfns_text_regular"
+                    android:text="@string/save"
+                    android:textColor="@color/color_name" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@id/linear_layout_like_comment_share"
+            android:background="@color/text_color_blue" />
+
+        <!--<android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_more_tech_bites"
+            android:layout_width="match_parent"
+            android:layout_below="@id/view"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="10dp">-->
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_commenting_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_commentor"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:border_width="2dp"
+                    app:border_color="@color/text_color_blue"
+                    android:src="@drawable/ic_action_profile_picture" />
+
+                <LinearLayout
+                    android:layout_width="w"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/img_commentor"
+                    android:layout_marginHorizontal="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_comment_user_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfns_text_regular"
+                        android:text="Mark Weins"
+                        android:textSize="15sp"
+                        android:textColor="@color/right_navigation_text_color_" />
+
+                    <TextView
+                        android:id="@+id/txt_comments"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfns_text_light"
+                        android:text="A must read for people investing in consumer products and technology"
+                        android:textColor="@color/right_navigation_text_color_" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_write_message"
+            android:layout_width="match_parent"
+            android:layout_marginVertical="5dp"
+            android:layout_below="@+id/card_commenting_details"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/edt_write_something_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginVertical="20dp"
+                android:background="@null"
+                android:fontFamily="@font/sfns_text_regular"
+                android:hint="@string/write_something"
+                android:maxLines="10"
+                android:textColor="@color/write_something" />
+
+            <ImageView
+                android:id="@+id/img_message_send_tech_bites"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:layout_marginEnd="10dp"
+                android:layout_marginVertical="20dp"
+                android:src="@drawable/ic_action_message_send" />
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

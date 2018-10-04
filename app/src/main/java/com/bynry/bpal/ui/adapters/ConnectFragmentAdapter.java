@@ -14,20 +14,20 @@ import com.bynry.bpal.ui.models.TechBitesConnectModel;
 
 import java.util.ArrayList;
 
-public class TechBitesFragmentAdapter extends RecyclerView.Adapter<TechBitesFragmentAdapter.ViewHolder> {
+public class ConnectFragmentAdapter extends RecyclerView.Adapter<ConnectFragmentAdapter.ViewHolder>{
 
     private ArrayList<TechBitesConnectModel> techBiteConnectList;
     private Context context;
 
-    public TechBitesFragmentAdapter(ArrayList<TechBitesConnectModel> techBiteConnectList, Context context) {
-        this.techBiteConnectList = techBiteConnectList;
+    public ConnectFragmentAdapter(ArrayList<TechBitesConnectModel> techBiteconnectList, Context context) {
+        this.techBiteConnectList = techBiteconnectList;
         this.context = context;
     }
 
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.cell_tech_bites, parent, false);
-        TechBitesFragmentAdapter.ViewHolder viewHolder = new  TechBitesFragmentAdapter.ViewHolder(view);
+        View view = layoutInflater.inflate(R.layout.cell_connect, parent, false);
+        ConnectFragmentAdapter.ViewHolder viewHolder = new  ConnectFragmentAdapter.ViewHolder(view);
         return viewHolder;
     }
 
@@ -50,8 +50,8 @@ public class TechBitesFragmentAdapter extends RecyclerView.Adapter<TechBitesFrag
         public ViewHolder(View itemView) {
             super(itemView);
 
-            txtHeading = itemView.findViewById(R.id.txt_heading);
-            txtDescription = itemView.findViewById(R.id.txt_description);
+            txtHeading = itemView.findViewById(R.id.txt_heading_connect);
+            txtDescription = itemView.findViewById(R.id.txt_description_connect);
         }
     }
 }

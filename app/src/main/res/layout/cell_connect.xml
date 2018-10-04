@@ -12,7 +12,7 @@
         android:weightSum="2">
 
         <ImageView
-            android:id="@+id/image_main"
+            android:id="@+id/image_main_connect"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -26,22 +26,22 @@
             android:layout_marginHorizontal="10dp">
 
             <ImageView
-                android:id="@+id/img_more_options"
+                android:id="@+id/img_more_options_connect"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="right"
                 android:src="@drawable/ic_action_more_options"/>
 
             <TextView
-                android:id="@+id/txt_heading"
+                android:id="@+id/txt_heading_connect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sfns_display_medium"
-                android:textSize="16sp"
+                android:textSize="17sp"
                 android:textColor="@color/right_navigation_text_color_"/>
 
             <TextView
-                android:id="@+id/txt_description"
+                android:id="@+id/txt_description_connect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sfns_text_light"

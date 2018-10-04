@@ -1,14 +1,18 @@
 package com.bynry.bpal.ui.adapters;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bynry.bpal.R;
-import com.bynry.bpal.ui.models.WhatsUpModel;
+import com.bynry.bpal.ui.activities.LandingActivity;
+import com.bynry.bpal.ui.fragments.WhatsUpFragment;
+import com.bynry.bpal.ui.models.WhatsUpBazaarModel;
 
 import java.util.ArrayList;
 
@@ -16,10 +20,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class WhatsUpFragmentAdapter extends RecyclerView.Adapter<WhatsUpFragmentAdapter.ViewHolder> {
 
-    private ArrayList<WhatsUpModel> whatsUpList;
+    private ArrayList<WhatsUpBazaarModel> whatsUpList;
     private Context context;
 
-    public WhatsUpFragmentAdapter(ArrayList<WhatsUpModel> whatsUpList, Context context) {
+    public WhatsUpFragmentAdapter(ArrayList<WhatsUpBazaarModel> whatsUpList, Context context) {
         this.whatsUpList = whatsUpList;
         this.context = context;
     }
@@ -51,8 +55,8 @@ public class WhatsUpFragmentAdapter extends RecyclerView.Adapter<WhatsUpFragment
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        CircleImageView circleImgUserImage;
-        TextView txtNameOfUser, txtSubject, txtDate, txtCaption, txtDetails, txtNoOfComments, txtLastCommentDate;
+        private CircleImageView circleImgUserImage;
+        private TextView txtNameOfUser, txtSubject, txtDate, txtCaption, txtDetails, txtNoOfComments, txtLastCommentDate;
 
         public ViewHolder(View itemView) {
             super(itemView);

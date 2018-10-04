@@ -1,9 +1,11 @@
 package com.bynry.bpal.ui.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -13,14 +15,14 @@ import com.bynry.bpal.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class DiscussionActivity extends AppCompatActivity {
+public class DiscussionActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RelativeLayout layoutHeader, layoutFooter, layoutDetails;
     private RecyclerView recyclerView;
     private CircleImageView circleImgProfilePictureUser;
     private TextView txtWhatsUp, txtCaption;
     private CardView cardWriteMessage;
-    private ImageView imgAttach, imgMessageSend;
+    private ImageView imgAttach, imgMessageSend, imgBackArrow;
     private EditText edtWriteSomething;
     private String caption;
 
@@ -45,6 +47,8 @@ public class DiscussionActivity extends AppCompatActivity {
 
         imgAttach = findViewById(R.id.img_attach);
         imgMessageSend = findViewById(R.id.img_message_send);
+        imgBackArrow = findViewById(R.id.img_back_arrow_discussion);
+
         edtWriteSomething = findViewById(R.id.edt_write_something);
 
         Bundle extras = getIntent().getExtras();
@@ -54,5 +58,17 @@ public class DiscussionActivity extends AppCompatActivity {
             caption = extras.getString("caption");
 
         txtCaption.setText(caption);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == imgAttach) {
+
+        } else if (view == imgMessageSend) {
+
+        } else if (view == imgBackArrow) {
+            Intent intent = new Intent(this, LandingActivity.class);
+            startActivity(intent);
+        }
     }
 }

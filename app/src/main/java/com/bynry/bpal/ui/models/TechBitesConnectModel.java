@@ -1,6 +1,6 @@
 package com.bynry.bpal.ui.models;
 
-public class TechBitesModel {
+public class TechBitesConnectModel {
 
     public String heading, description;
 

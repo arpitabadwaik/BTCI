@@ -14,7 +14,7 @@
         android:background="@drawable/ic_action_background_profile">
 
         <ImageView
-            android:id="@+id/img_back_arrow"
+            android:id="@+id/img_back_arrow_discussion"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginVertical="20dp"
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginVertical="10dp"
-            android:layout_toRightOf="@+id/img_back_arrow">
+            android:layout_toRightOf="@+id/img_back_arrow_discussion">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circle_img_profile_picture_user"
@@ -55,7 +55,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sfns_text_regular"
-                    android:text="Worth visiting place : Mahabaleshwar :)"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 

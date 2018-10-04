@@ -1,8 +1,13 @@
 package com.bynry.bpal.ui.models;
 
-public class WhatsUpModel {
+public class WhatsUpBazaarModel {
+
+    // For WhatsUp
 
     public String name, subject, date, caption, details, noOfComments, lastCommentDate, image1;
+
+    //  For Bazaar
+    public String price, noOfInterestedPeople, lastInterestedClick;
 
     public String getName() {
         return name;
@@ -24,7 +29,6 @@ public class WhatsUpModel {
         return details;
     }
 
-
     public String getNoOfComments() {
         return noOfComments;
     }
@@ -36,4 +40,19 @@ public class WhatsUpModel {
     public String getImage1() {
         return image1;
     }
+
+    // For Bazaar
+
+    public String getPrice() {
+        return price;
+    }
+
+    public String getNoOfInterestedPeople() {
+        return noOfInterestedPeople;
+    }
+
+    public String getLastInterestedClick() {
+        return lastInterestedClick;
+    }
+
 }

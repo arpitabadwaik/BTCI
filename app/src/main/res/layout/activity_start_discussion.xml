@@ -14,7 +14,7 @@
             android:background="@drawable/ic_action_background_profile" >
 
             <ImageView
-                android:id="@+id/img_back_arrow"
+                android:id="@+id/img_back_arrow_start_discussion"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginVertical="20dp"
@@ -32,7 +32,7 @@
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:fontFamily="@font/sfns_text_medium"
-                android:layout_toRightOf="@+id/img_back_arrow"/>
+                android:layout_toRightOf="@+id/img_back_arrow_start_discussion"/>
 
             <ImageView
                 android:id="@+id/img_attach"
