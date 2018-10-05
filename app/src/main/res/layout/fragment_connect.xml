@@ -31,7 +31,7 @@
                 android:weightSum="2">
 
                 <ImageView
-                    android:id="@+id/image_main"
+                    android:id="@+id/image_main_connect"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

@@ -8,18 +8,23 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.bynry.bpal.R;
 
-public class QuizFragment extends DialogFragment {
+
+public class OpenImageVideoFragment extends DialogFragment {
+
+    private ImageView imageView;
 
     private OnFragmentInteractionListener mListener;
 
-    public QuizFragment() {
+    public OpenImageVideoFragment() {
     }
 
-    public static QuizFragment newInstance(String param1, String param2) {
-        QuizFragment fragment = new QuizFragment();
+
+    public static OpenImageVideoFragment newInstance() {
+        OpenImageVideoFragment fragment = new OpenImageVideoFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -33,10 +38,8 @@ public class QuizFragment extends DialogFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quiz, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_open_image_video, container, false);
     }
 
     public void onButtonPressed(Uri uri) {

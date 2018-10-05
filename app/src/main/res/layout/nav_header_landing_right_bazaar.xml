@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout_nav_right_bazaar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginBottom="60dp">
+
+    <TextView
+        android:id="@+id/txt_refine_your_interest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/refine_your_interest"
+        android:textColor="@color/right_navigation_text_color_"
+        android:textSize="17sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginVertical="10dp"
+        android:fontFamily="@font/sfns_display_medium" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="15dp">
+
+        <CheckBox
+            android:id="@+id/chk_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_create_profile_btn"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/txt_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buy"
+            android:layout_marginLeft="7dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="15dp">
+
+        <CheckBox
+            android:id="@+id/chk_sell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_create_profile_btn"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/txt_sell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sell"
+            android:layout_marginLeft="7dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/edit_text_line_color"
+        android:layout_marginVertical="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="15dp">
+
+        <CheckBox
+            android:id="@+id/chk_appliances"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_create_profile_btn"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/txt_appliances"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appliances"
+            android:layout_marginLeft="7dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="15dp">
+
+        <CheckBox
+            android:id="@+id/chk_electronics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_create_profile_btn"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/txt_electronics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/electronics"
+            android:layout_marginLeft="7dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="15dp">
+
+        <CheckBox
+            android:id="@+id/chk_automobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_create_profile_btn"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/txt_automobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/automobile"
+            android:layout_marginLeft="7dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="15dp">
+
+        <CheckBox
+            android:id="@+id/chk_home_decor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_create_profile_btn"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/txt_home_decor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_decor"
+            android:layout_marginLeft="7dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="15dp">
+
+        <CheckBox
+            android:id="@+id/chk_furniture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_create_profile_btn"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/txt_furniture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/furniture"
+            android:layout_marginLeft="7dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="15dp">
+
+        <CheckBox
+            android:id="@+id/chk_mobile_phones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_create_profile_btn"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/txt_mobile_phones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mobile_phones"
+            android:layout_marginLeft="7dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="15dp">
+
+        <CheckBox
+            android:id="@+id/chk_laptop_computers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_create_profile_btn"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/txt_laptop_computers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/laptop_computers"
+            android:layout_marginLeft="7dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        android:layout_marginLeft="15dp">
+
+        <CheckBox
+            android:id="@+id/chk_stationary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/color_create_profile_btn"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/txt_stationary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stationary"
+            android:layout_marginLeft="7dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -73,6 +73,29 @@
     <string name="more_tech_bites">More Tech Bites</string>
     <string name="like">Like</string>
     <string name="comment">Comment</string>
+    <string name="business">Business</string>
+    <string name="self_help">Self Help</string>
+    <string name="design">Design</string>
+    <string name="finance">Finance</string>
+    <string name="buy">Buy</string>
+    <string name="sell">Sell</string>
+    <string name="appliances">Appliances</string>
+    <string name="electronics">Electronics</string>
+    <string name="automobile">Automobile</string>
+    <string name="home_decor">Home decor</string>
+    <string name="furniture">Furniture</string>
+    <string name="mobile_phones">Mobile Phones</string>
+    <string name="laptop_computers">Laptop Computers</string>
+    <string name="stationary">Stationary</string>
+    <string name="cultural">Cultural</string>
+    <string name="informative">Informative</string>
+    <string name="creativity">Creativity</string>
+    <string name="social">Social</string>
+    <string name="sports">Sports</string>
+    <string name="post_ad">Post Ad</string>
+    <string name="buyer">Buyer</string>
+    <string name="seller">Seller</string>
+    <string name="contact_no">Contact No.</string>
     <array name="location">
         <item>Location</item>
         <item>Pune - 2</item>

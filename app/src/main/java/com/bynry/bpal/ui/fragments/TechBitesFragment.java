@@ -12,11 +12,11 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bynry.bpal.R;
-import com.bynry.bpal.ui.activities.DiscussionActivity;
 import com.bynry.bpal.ui.activities.TechBitesMoreActivity;
 import com.bynry.bpal.ui.adapters.TechBitesFragmentAdapter;
 import com.bynry.bpal.ui.interfaces.RecyclerViewClickListener;
@@ -29,13 +29,12 @@ public class TechBitesFragment extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<TechBitesConnectModel> techBiteconnectList;
     private Context context;
+    private ImageView imgMain;
 
     private OnFragmentInteractionListener mListener;
 
     public TechBitesFragment() {
-
     }
-
 
     public static TechBitesFragment newInstance(String param1, String param2) {
         TechBitesFragment fragment = new TechBitesFragment();
@@ -57,6 +56,10 @@ public class TechBitesFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_tech_bites, container, false);
         recyclerView = view.findViewById(R.id.recycler_view_tech_bites);
+
+        View view1 = inflater.inflate(R.layout.cell_tech_bites, container, false);
+        imgMain = view1.findViewById(R.id.image_main);
+        imgMain.setScaleType(ImageView.ScaleType.FIT_END);
 
         context = getContext();
 

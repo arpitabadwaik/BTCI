@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bynry.bpal.R;
@@ -27,6 +29,7 @@ public class ConnectFragment extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<TechBitesConnectModel> techBiteConnectList;
     private Context context;
+    private ImageView imgMain;
 
     private OnFragmentInteractionListener mListener;
 
@@ -52,7 +55,10 @@ public class ConnectFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_connect, container, false);
         recyclerView = view.findViewById(R.id.recycler_view_connect);
-        recyclerView.setHasFixedSize(true);
+
+        /*View view1 = inflater.inflate(R.layout.cell_connect, container, false);
+        imgMain = view1.findViewById(R.id.image_main_connect);
+        imgMain.setScaleType(ImageView.ScaleType.FIT_XY);*/
 
         LinearLayoutManager layout = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layout);

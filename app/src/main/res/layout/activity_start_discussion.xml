@@ -6,97 +6,136 @@
     android:layout_height="match_parent"
     tools:context="com.bynry.bpal.ui.activities.StartDiscussionActivity">
 
-        <RelativeLayout
-            android:id="@+id/layout_header"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/ic_action_background_profile" >
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_action_background_profile">
 
-            <ImageView
-                android:id="@+id/img_back_arrow_start_discussion"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginVertical="20dp"
-                android:layout_marginHorizontal="10dp"
-                android:src="@drawable/ic_action_back_arrow" />
+        <ImageView
+            android:id="@+id/img_back_arrow_start_discussion"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="20dp"
+            android:src="@drawable/ic_action_back_arrow" />
 
-            <TextView
-                android:id="@+id/txt_whats_up"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginVertical="20dp"
-                android:layout_marginTop="2dp"
-                android:text="@string/whats_up"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:fontFamily="@font/sfns_text_medium"
-                android:layout_toRightOf="@+id/img_back_arrow_start_discussion"/>
+        <TextView
+            android:id="@+id/txt_whats_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginVertical="20dp"
+            android:layout_toRightOf="@+id/img_back_arrow_start_discussion"
+            android:fontFamily="@font/sfns_text_medium"
+            android:text="@string/whats_up"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
 
-            <ImageView
-                android:id="@+id/img_attach"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/ic_action_attach_white"
-                android:layout_marginRight="10dp"
-                android:layout_marginVertical="20dp" />
+        <ImageView
+            android:id="@+id/img_attach"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginVertical="20dp"
+            android:src="@drawable/ic_action_attach_white" />
 
-        </RelativeLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_below="@+id/layout_header"
         android:layout_marginHorizontal="20dp"
-        android:layout_below="@+id/layout_header" >
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/edt_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/subject"
-            android:fontFamily="@font/sfns_display_regular"
-            android:textColor="@color/edit_text_whats_up"
             android:layout_marginTop="5dp"
-            android:backgroundTint="@color/edit_text_line_color"/>
+            android:backgroundTint="@color/edit_text_line_color"
+            android:fontFamily="@font/sfns_display_regular"
+            android:text="@string/subject"
+            android:textColor="@color/edit_text_whats_up" />
 
         <EditText
             android:id="@+id/edt_related_keywords"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/related_keywords"
-            android:fontFamily="@font/sfns_display_regular"
-            android:textColor="@color/edit_text_whats_up"
             android:layout_marginTop="15dp"
-            android:backgroundTint="@color/edit_text_line_color"/>
+            android:backgroundTint="@color/edit_text_line_color"
+            android:fontFamily="@font/sfns_display_regular"
+            android:text="@string/related_keywords"
+            android:textColor="@color/edit_text_whats_up" />
+
+        <EditText
+            android:id="@+id/edt_contact_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/edit_text_line_color"
+            android:fontFamily="@font/sfns_display_regular"
+            android:text="@string/contact_no"
+            android:textColor="@color/edit_text_whats_up"
+            android:visibility="gone" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/color_create_profile_btn"
+                android:fontFamily="@font/sfns_display_regular"
+                android:paddingStart="5dp"
+                android:text="@string/buyer"
+                android:textColor="@color/edit_text_whats_up" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/color_create_profile_btn"
+                android:fontFamily="@font/sfns_display_regular"
+                android:paddingStart="5dp"
+                android:text="@string/seller"
+                android:textColor="@color/edit_text_whats_up" />
+
+        </RadioGroup>
 
         <EditText
             android:id="@+id/edt_compose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:backgroundTint="@color/edit_text_line_color"
             android:fontFamily="@font/sfns_display_regular"
-            android:maxLines="5"
             android:hint="@string/compose"
-            android:textColor="@color/edit_text_whats_up"
+            android:maxLines="5"
             android:paddingBottom="150dp"
-            android:layout_marginTop="15dp"/>
+            android:textColor="@color/edit_text_whats_up" />
 
         <Button
             android:id="@+id/btn_discussion_submit"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_weight="1"
-            android:background="@color/color_create_profile_btn"
-            android:text="@string/submit"
-            android:textAllCaps="false"
             android:layout_gravity="right"
             android:layout_marginRight="30dp"
-            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/color_create_profile_btn"
             android:fontFamily="@font/sfns_display_medium"
-            android:layout_marginTop="10dp"/>
+            android:text="@string/submit"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

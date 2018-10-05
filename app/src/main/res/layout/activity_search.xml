@@ -31,7 +31,7 @@
         android:layout_gravity="end"
         android:layout_marginTop="65dp"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_landing_right">
+        app:headerLayout="@layout/nav_header_landing_right_whats_up">
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -3,13 +3,11 @@ package com.bynry.bpal.ui.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -17,15 +15,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
@@ -36,7 +33,6 @@ import android.widget.Toast;
 import com.bynry.bpal.R;
 
 import com.bynry.bpal.ui.adapters.ViewPagerAdapter;
-import com.bynry.bpal.ui.adapters.WhatsUpFragmentAdapter;
 import com.bynry.bpal.ui.fragments.BazaarFragment;
 import com.bynry.bpal.ui.fragments.ConnectFragment;
 import com.bynry.bpal.ui.fragments.MyFeedbackFragment;
@@ -44,15 +40,13 @@ import com.bynry.bpal.ui.fragments.QuizFragment;
 import com.bynry.bpal.ui.fragments.TechBitesFragment;
 import com.bynry.bpal.ui.fragments.WhatsUpFragment;
 
-import java.util.ArrayList;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class LandingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, QuizFragment.OnFragmentInteractionListener, MyFeedbackFragment.OnFragmentInteractionListener {
 
     private Context context;
     private Toolbar toolbar;
-    private TabLayout tabLayout;
+    private TabLayout tabLayout, tabex;
     private ViewPager viewPager;
     private NavigationView navigationViewLeft, navigationViewRight;
     private View headerLayoutLeft, headerLayoutRight;
@@ -61,7 +55,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
     private DrawerLayout drawer;
     private AppBarLayout appBarLayout;
     private RatingBar ratingBar;
-    private TextView txtBPal, txtName, txtRefineYourInterest, txtMostTrending, txtMostRecent, txtTravel, txtFood, txtFitnessAndWellness, txtTechnology, txtParty;
+    private TextView txtBPal;
     private CheckBox chkMostTrending, chkMostRecent, chkTravel, chkFood, chkFitnessAndWellness, chkTechnology, chkParty;
     private Button btnCancel, btnApply;
     FloatingActionButton floatingActionButton;
@@ -101,15 +95,6 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         ratingBar = headerLayoutLeft.findViewById(R.id.rating_bar);
 
         txtBPal = findViewById(R.id.txt_b_pal);
-        txtName = headerLayoutLeft.findViewById(R.id.txt_name);
-        txtRefineYourInterest = headerLayoutRight.findViewById(R.id.txt_refine_your_interest);
-        txtMostTrending = headerLayoutRight.findViewById(R.id.txt_most_trending);
-        txtMostRecent = headerLayoutRight.findViewById(R.id.txt_most_recent);
-        txtTravel = headerLayoutRight.findViewById(R.id.txt_travel);
-        txtFood = headerLayoutRight.findViewById(R.id.txt_food);
-        txtFitnessAndWellness = headerLayoutRight.findViewById(R.id.txt_fitness_and_wellness);
-        txtTechnology = headerLayoutRight.findViewById(R.id.txt_technology);
-        txtParty = headerLayoutRight.findViewById(R.id.txt_party);
 
         chkMostTrending = headerLayoutRight.findViewById(R.id.chk_most_trending);
         chkMostRecent = headerLayoutRight.findViewById(R.id.chk_most_recent);
@@ -138,6 +123,72 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                LayoutInflater li = getLayoutInflater();
+                View drawerWhatsUp = li.inflate(R.layout.nav_header_landing_right_whats_up, (ViewGroup) findViewById(R.id.layout_nav_right_whats_up));
+                View drawerTechBites = li.inflate(R.layout.nav_header_landing_right_tech_bites, (ViewGroup) findViewById(R.id.layout_nav_right_tech_bites));
+                View drawerBazaar = li.inflate(R.layout.nav_header_landing_right_bazaar, (ViewGroup) findViewById(R.id.linear_layout_nav_right_bazaar));
+                View drawerConnect = li.inflate(R.layout.nav_header_landing_right_connect, (ViewGroup) findViewById(R.id.layout_nav_right_connect));
+
+                if (position == 0) {
+                    navigationViewRight.removeHeaderView(drawerTechBites);
+                    navigationViewRight.removeHeaderView(drawerBazaar);
+                    navigationViewRight.removeHeaderView(drawerConnect);
+                    navigationViewRight.addHeaderView(drawerWhatsUp);
+
+                } else if (position == 1) {
+                    navigationViewRight.removeHeaderView(drawerWhatsUp);
+                    navigationViewRight.removeHeaderView(drawerBazaar);
+                    navigationViewRight.removeHeaderView(drawerConnect);
+                    navigationViewRight.addHeaderView(drawerTechBites);
+
+                }else if (position == 2){
+                    navigationViewRight.removeHeaderView(drawerWhatsUp);
+                    navigationViewRight.removeHeaderView(drawerTechBites);
+                    navigationViewRight.removeHeaderView(drawerConnect);
+                    navigationViewRight.addHeaderView(drawerBazaar);
+
+                }else if (position == 3){
+                    navigationViewRight.removeHeaderView(drawerWhatsUp);
+                    navigationViewRight.removeHeaderView(drawerTechBites);
+                    navigationViewRight.removeHeaderView(drawerBazaar);
+                    navigationViewRight.addHeaderView(drawerConnect);
+                }
+
+                Log.i("position", String.valueOf(position));
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
         navigationViewLeft.setNavigationItemSelectedListener(this);
         navigationViewRight.setNavigationItemSelectedListener(this);
         floatingActionButton.setOnClickListener(this);
@@ -156,31 +207,24 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.activity_landing_left_drawer, menu);
         return true;
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        /*//noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
-        Fragment fragment = null;
-        Class fragmentClass;
 
         if (id == R.id.nav_home) {
             Intent intent = new Intent(this, ProfileActivity.class);
@@ -188,7 +232,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
 
         } else if (id == R.id.nav_profile) {
             Intent intent = new Intent(this, AddEditProfileActivity.class);
-            intent.putExtra("from","EditProfile");
+            intent.putExtra("from", "EditProfile");
             startActivity(intent);
 
         } else if (id == R.id.nav_quiz) {
@@ -208,11 +252,11 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
             Toast.makeText(this, "You clicked on settings", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_assist) {
-           Intent intent = new Intent(this, AssistActivity.class);
-           startActivity(intent);
+            Intent intent = new Intent(this, AssistActivity.class);
+            startActivity(intent);
 
-        }else if (id == R.id.nav_logout) {
-           Toast.makeText(this, "You have successfully Logged out", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_logout) {
+            Toast.makeText(this, "You have successfully Logged out", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -220,7 +264,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         return true;
     }
 
-    private void setupTabIcons(){
+    private void setupTabIcons() {
 
         TextView tabOne = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab_layout, null);
         tabOne.setText("What's Up?");
@@ -253,16 +297,23 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         viewPager.setAdapter(adapter);
     }
 
+    /*tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
+            @Override
+            public void onTabSelected(TabLayout.Tab tab){
+                int position = tab.getPosition();
+            }
+        });
+    */
     @Override
     public void onClick(View view) {
-        if (view == floatingActionButton){
+        if (view == floatingActionButton) {
             Intent intent = new Intent(this, StartDiscussionActivity.class);
             startActivity(intent);
-        }else if (view == imgLeftDrawer){
+        } else if (view == imgLeftDrawer) {
             drawer.openDrawer(Gravity.LEFT);
-        }else if (view == imgRightDrawer){
+        } else if (view == imgRightDrawer) {
             drawer.openDrawer(Gravity.RIGHT);
-        }else if (view == imgSearch){
+        } else if (view == imgSearch) {
             Intent intent = new Intent(this, SearchActivity.class);
             startActivity(intent);
         }
