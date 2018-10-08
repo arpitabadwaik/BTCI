@@ -1,8 +1,7 @@
 package com.bynry.bpal.ui.activities;
 
+import android.app.Dialog;
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -10,6 +9,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -17,9 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bynry.bpal.R;
-import com.bynry.bpal.ui.fragments.OpenImageVideoFragment;
 
-public class TechBitesMoreActivity extends AppCompatActivity implements View.OnClickListener, OpenImageVideoFragment.OnFragmentInteractionListener {
+public class TechBitesMoreActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FrameLayout mainFrameLayout;
     private TextView txtHeadingText, txtDateOfPost, txtDescriptionText, txtLike, txtComment, txtSavePost;
@@ -60,15 +59,10 @@ public class TechBitesMoreActivity extends AppCompatActivity implements View.OnC
 
         cardViewComment = findViewById(R.id.card_comments);
 
-        LayoutInflater li = getLayoutInflater();
-        View view = li.inflate(R.layout.fragment_open_image_video, (ViewGroup) findViewById(R.id.frame_layout));
-        imgCloseFragment = view.findViewById(R.id.img_close_fragment);
-
         imgLike.setOnClickListener(this);
         imgComment.setOnClickListener(this);
         imgSave.setOnClickListener(this);
         image1.setOnClickListener(this);
-        imgCloseFragment.setOnClickListener(this);
     }
 
     @Override
@@ -90,18 +84,18 @@ public class TechBitesMoreActivity extends AppCompatActivity implements View.OnC
             imgLike.setImageResource(R.drawable.ic_action_like_orange_filled);
 
         } else if (view == image1) {
-            FragmentManager fm = getSupportFragmentManager();
-            OpenImageVideoFragment openImageVideoFragment = OpenImageVideoFragment.newInstance();
-            openImageVideoFragment.show(fm, "");
+            final Dialog dialog = new Dialog(this);
+            dialog.setContentView(R.layout.open_image_video_dialog);
 
-        } else if (view == imgCloseFragment) {
-            Intent intent = new Intent(this, TechBitesMoreActivity.class);
-            startActivity(intent);
+            ImageView imgCloseDialog = dialog.findViewById(R.id.img_close_picture_dialog);
+            imgCloseDialog.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
+
         }
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 }

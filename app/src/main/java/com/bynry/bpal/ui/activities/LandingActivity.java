@@ -58,7 +58,8 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
     private TextView txtBPal;
     private CheckBox chkMostTrending, chkMostRecent, chkTravel, chkFood, chkFitnessAndWellness, chkTechnology, chkParty;
     private Button btnCancel, btnApply;
-    FloatingActionButton floatingActionButton;
+    private FloatingActionButton floatingActionButton;
+    private int positions;
     private int[] tabIcons = {
             R.drawable.ic_action_whats_up,
             R.drawable.ic_action_tech_bites,
@@ -96,13 +97,13 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
 
         txtBPal = findViewById(R.id.txt_b_pal);
 
-        chkMostTrending = headerLayoutRight.findViewById(R.id.chk_most_trending);
+     /*   chkMostTrending = headerLayoutRight.findViewById(R.id.chk_most_trending);
         chkMostRecent = headerLayoutRight.findViewById(R.id.chk_most_recent);
         chkTravel = headerLayoutRight.findViewById(R.id.chk_travel);
         chkFood = headerLayoutRight.findViewById(R.id.chk_food);
         chkFitnessAndWellness = headerLayoutRight.findViewById(R.id.chk_fitness_and_wellness);
         chkTechnology = headerLayoutRight.findViewById(R.id.chk_technology);
-        chkParty = headerLayoutRight.findViewById(R.id.chk_party);
+        chkParty = headerLayoutRight.findViewById(R.id.chk_party);*/
 
         btnCancel = findViewById(R.id.btn_cancel);
         btnApply = findViewById(R.id.btn_apply);
@@ -132,6 +133,56 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
             @Override
             public void onPageSelected(int position) {
 
+               positions = position;
+
+               if (position == 3){
+                   floatingActionButton.setImageResource(R.drawable.ic_action_floating_action_calendar_white);
+               }
+
+                /*LayoutInflater li = getLayoutInflater();
+                View drawerWhatsUp = li.inflate(R.layout.nav_header_landing_right_whats_up, (ViewGroup) findViewById(R.id.layout_nav_right_whats_up));
+                View drawerTechBites = li.inflate(R.layout.nav_header_landing_right_tech_bites, (ViewGroup) findViewById(R.id.layout_nav_right_tech_bites));
+                View drawerBazaar = li.inflate(R.layout.nav_header_landing_right_bazaar, (ViewGroup) findViewById(R.id.linear_layout_nav_right_bazaar));
+                View drawerConnect = li.inflate(R.layout.nav_header_landing_right_connect, (ViewGroup) findViewById(R.id.layout_nav_right_connect));
+
+                if (viewPager.getParent() == null) {
+                    if (position == 0) {
+                        navigationViewRight.removeHeaderView(drawerTechBites);
+                        navigationViewRight.removeHeaderView(drawerBazaar);
+                        navigationViewRight.removeHeaderView(drawerConnect);
+                        navigationViewRight.addHeaderView(drawerWhatsUp);
+
+                    } else if (position == 1) {
+                        navigationViewRight.removeHeaderView(drawerWhatsUp);
+                        navigationViewRight.removeHeaderView(drawerBazaar);
+                        navigationViewRight.removeHeaderView(drawerConnect);
+                        navigationViewRight.addHeaderView(drawerTechBites);
+
+                    } else if (position == 2) {
+                        navigationViewRight.removeHeaderView(drawerWhatsUp);
+                        navigationViewRight.removeHeaderView(drawerTechBites);
+                        navigationViewRight.removeHeaderView(drawerConnect);
+                        navigationViewRight.addHeaderView(drawerBazaar);
+
+                    } else if (position == 3) {
+                        navigationViewRight.removeHeaderView(drawerWhatsUp);
+                        navigationViewRight.removeHeaderView(drawerTechBites);
+                        navigationViewRight.removeHeaderView(drawerBazaar);
+                        navigationViewRight.addHeaderView(drawerConnect);
+                    }
+                }*/
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                /*int position = tab.getPosition();
                 LayoutInflater li = getLayoutInflater();
                 View drawerWhatsUp = li.inflate(R.layout.nav_header_landing_right_whats_up, (ViewGroup) findViewById(R.id.layout_nav_right_whats_up));
                 View drawerTechBites = li.inflate(R.layout.nav_header_landing_right_tech_bites, (ViewGroup) findViewById(R.id.layout_nav_right_tech_bites));
@@ -150,32 +201,18 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
                     navigationViewRight.removeHeaderView(drawerConnect);
                     navigationViewRight.addHeaderView(drawerTechBites);
 
-                }else if (position == 2){
+                } else if (position == 2) {
                     navigationViewRight.removeHeaderView(drawerWhatsUp);
                     navigationViewRight.removeHeaderView(drawerTechBites);
                     navigationViewRight.removeHeaderView(drawerConnect);
                     navigationViewRight.addHeaderView(drawerBazaar);
 
-                }else if (position == 3){
+                } else if (position == 3) {
                     navigationViewRight.removeHeaderView(drawerWhatsUp);
                     navigationViewRight.removeHeaderView(drawerTechBites);
                     navigationViewRight.removeHeaderView(drawerBazaar);
                     navigationViewRight.addHeaderView(drawerConnect);
-                }
-
-                Log.i("position", String.valueOf(position));
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-
+                }*/
             }
 
             @Override
@@ -297,18 +334,17 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         viewPager.setAdapter(adapter);
     }
 
-    /*tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
-            @Override
-            public void onTabSelected(TabLayout.Tab tab){
-                int position = tab.getPosition();
-            }
-        });
-    */
     @Override
     public void onClick(View view) {
         if (view == floatingActionButton) {
             Intent intent = new Intent(this, StartDiscussionActivity.class);
-            startActivity(intent);
+            if (positions == 0){
+                startActivity(intent);
+            }else if (positions == 2){
+                intent.putExtra("bazaar","bazaar");
+                startActivity(intent);
+            }
+
         } else if (view == imgLeftDrawer) {
             drawer.openDrawer(Gravity.LEFT);
         } else if (view == imgRightDrawer) {

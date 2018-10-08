@@ -98,7 +98,7 @@ public class TechBitesFragment extends Fragment {
 
             @Override
             public void onLongClick(View view, int position) {
-                Toast.makeText(context, "Long press on position :"+position, Toast.LENGTH_LONG).show();
+
             }
         }));
 

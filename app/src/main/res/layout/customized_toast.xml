@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <Button
-        android:id="@+id/angry_btn"
+        android:id="@+id/btn_toast"
 
         android:text="Post saved successfully!"
         android:textColor="#FFFFFF"

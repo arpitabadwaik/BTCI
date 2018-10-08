@@ -1,38 +1,40 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frame_layout"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_centerInParent="true"
-    android:layout_marginTop="50dp"
-    android:background="@color/right_navigation_text_color_"
-    tools:context="com.bynry.bpal.ui.fragments.OpenImageVideoFragment">
+    android:layout_height="wrap_content"
+    android:background="@color/right_navigation_text_color_">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="20dp">
 
         <ImageView
-            android:id="@+id/img_close_fragment"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:id="@+id/img_close_picture_dialog"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentRight="true"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/ic_action_close_orange" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerInParent="true">
+            android:layout_centerInParent="true"
+            android:layout_below="@id/img_close_picture_dialog"
+            android:layout_marginTop="50dp"
+            android:weightSum="3"
+            android:layout_marginBottom="60dp">
 
             <ImageView
                 android:id="@+id/img_previous"
                 android:layout_width="30dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:src="@drawable/ic_action_back_arrow" />
 
             <ImageView
@@ -40,6 +42,7 @@
                 android:layout_width="200dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_action_image_1" />
 
@@ -47,12 +50,13 @@
                 android:id="@+id/img_next"
                 android:layout_width="30dp"
                 android:layout_height="40dp"
-                android:rotation="180"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:rotation="180"
                 android:src="@drawable/ic_action_back_arrow" />
 
         </LinearLayout>
 
     </RelativeLayout>
 
-</FrameLayout>
+</RelativeLayout>

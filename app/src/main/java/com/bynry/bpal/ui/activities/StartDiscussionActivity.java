@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -17,8 +18,10 @@ public class StartDiscussionActivity extends AppCompatActivity implements View.O
     private RelativeLayout layoutHeader;
     private ImageView imgBackArrow, imgAttach;
     private TextView txtWhatsUp;
-    private EditText edtSubject, edtRelatedKeywords, edtCompose;
-    Button btnSubmit;
+    private EditText edtSubject, edtRelatedKeywords, edtCompose, edtContactNo;
+    private Button btnSubmit;
+    private RadioGroup radioGroup;
+    private String bazaar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +38,25 @@ public class StartDiscussionActivity extends AppCompatActivity implements View.O
         edtSubject = findViewById(R.id.edt_subject);
         edtRelatedKeywords = findViewById(R.id.edt_related_keywords);
         edtCompose = findViewById(R.id.edt_compose);
+        edtContactNo = findViewById(R.id.edt_contact_no);
 
         btnSubmit = findViewById(R.id.btn_discussion_submit);
+
+        radioGroup = findViewById(R.id.radio_group);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras == null)
+            bazaar = null;
+        else {
+            bazaar = extras.getString("bazaar");
+            txtWhatsUp.setText("Post Ad");
+            edtContactNo.setVisibility(View.VISIBLE);
+            radioGroup.setVisibility(View.VISIBLE);
+            btnSubmit.setText("Post");
+        }
+
     }
+
 
     @Override
     public void onClick(View view) {

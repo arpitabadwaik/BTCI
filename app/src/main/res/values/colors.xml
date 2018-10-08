@@ -20,4 +20,5 @@
     <color name="background_color_profile">#EEFDFF </color>
     <color name="background_color_linear_layout_search">#008B9C </color>
     <color name="background_color_search_activity">#F2F2F2 </color>
+    <color name="img_slider_round_border_color">#979797 </color>
 </resources>

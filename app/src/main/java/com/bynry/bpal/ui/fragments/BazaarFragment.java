@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.bynry.bpal.R;
+import com.bynry.bpal.ui.activities.BazaarDescriptionActivity;
 import com.bynry.bpal.ui.activities.TechBitesMoreActivity;
 import com.bynry.bpal.ui.adapters.BazaarFragmentAdapter;
 import com.bynry.bpal.ui.adapters.WhatsUpFragmentAdapter;
@@ -109,13 +110,13 @@ public class BazaarFragment extends Fragment {
 
             @Override
             public void onClick(View view, final int position) {
-                Intent intent = new Intent(context, TechBitesMoreActivity.class);
+                Intent intent = new Intent(context, BazaarDescriptionActivity.class);
                 startActivity(intent);
             }
 
             @Override
             public void onLongClick(View view, int position) {
-                Toast.makeText(context, "Long press on position :"+position, Toast.LENGTH_LONG).show();
+
             }
         }));
 
