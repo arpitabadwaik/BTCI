@@ -18,7 +18,7 @@ public class QuizFragment extends DialogFragment {
     public QuizFragment() {
     }
 
-    public static QuizFragment newInstance(String param1, String param2) {
+    public static QuizFragment newInstance() {
         QuizFragment fragment = new QuizFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);

@@ -17,4 +17,15 @@
         <item name="android:colorControlNormal">#FFFFFF</item>
     </style>
 
+    <style name="Theme.Custom" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:calendarViewStyle">@style/Widget.CalendarView.Custom</item>
+    </style>
+
+    <style name="Widget.CalendarView.Custom" parent="android:Widget.CalendarView">
+        <item name="android:focusedMonthDateColor">@color/right_navigation_text_color_</item>
+        <item name="android:weekNumberColor">@color/text_color_blue</item>
+        <item name="android:weekDayTextAppearance">@font/sfns_text_regular</item>
+        <item name="android:dateTextAppearance">@font/sfns_text_medium</item>
+    </style>
+
 </resources>

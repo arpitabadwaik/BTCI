@@ -73,51 +73,62 @@
 
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_header"
-        android:layout_marginTop="5dp">
-
-    </android.support.v7.widget.RecyclerView>
-
     <RelativeLayout
-        android:id="@+id/layout_footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_below="@id/layout_header">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_write_message"
+        <include
+            android:id="@+id/include"
+            layout="@layout/discussion_screen_commentor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            layout="@layout/discussion_screen_user"
+            android:layout_width="match_parent"
+            android:layout_below="@id/include"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:id="@+id/layout_footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="10dp">
+            android:layout_alignParentBottom="true">
 
-            <EditText
-                android:id="@+id/edt_write_something"
-                android:layout_width="wrap_content"
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_write_message"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginVertical="20dp"
-                android:background="@null"
-                android:fontFamily="@font/sfns_text_regular"
-                android:hint="@string/write_something"
-                android:maxLines="10"
-                android:textColor="@color/write_something" />
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp">
 
-            <ImageView
-                android:id="@+id/img_message_send"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right"
-                android:layout_marginEnd="10dp"
-                android:layout_marginVertical="20dp"
-                android:src="@drawable/ic_action_message_send" />
+                <EditText
+                    android:id="@+id/edt_write_something"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="@null"
+                    android:fontFamily="@font/sfns_text_regular"
+                    android:hint="@string/write_something"
+                    android:maxLines="10"
+                    android:textColor="@color/write_something" />
 
-        </android.support.v7.widget.CardView>
+                <ImageView
+                    android:id="@+id/img_message_send"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="right"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:src="@drawable/ic_action_message_send" />
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
 
     </RelativeLayout>
+    -->
 
 </RelativeLayout>

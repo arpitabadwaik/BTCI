@@ -97,13 +97,20 @@
     <string name="seller">Seller</string>
     <string name="contact_no">Contact No.</string>
     <string name="you_showed_interest">You showed interest!</string>
-    <string name="we_would_like_to_share_your_contact_details_with_the_seller">We would like to share your contact details\nwith the seller</string>
+    <string name="we_would_like_to_share_your_contact_details_with_the_seller">We would like to share your contact details with the seller</string>
     <string name="okay">Okay!</string>
     <string name="product_description">Product Description :</string>
     <string name="responses">Responses :</string>
     <string name="save_ad">Save Ad</string>
     <string name="interested">Interested ?</string>
     <string name="ad_saved_successfully">Ad Saved Successfully!</string>
+    <string name="events_on">Events on</string>
+    <string name="calender">Calender</string>
+    <string name="remove_from_calender">Remove from Calender</string>
+    <string name="you_are_attending_this_event">You are attending this event!</string>
+    <string name="you_can_remove_this_event_from_calender_by_using_calender_view">you can remove this event from calender by using calender view! </string>
+    <string name="people_attending_event">People attending event: </string>
+    <string name="to_attend">To attend </string>
     <array name="location">
         <item>Location</item>
         <item>Pune - 2</item>

@@ -37,7 +37,7 @@ public class WhatsUpFragment extends Fragment {
     }
 
 
-    public static WhatsUpFragment newInstance(String param1, String param2) {
+    public static WhatsUpFragment newInstance() {
         WhatsUpFragment fragment = new WhatsUpFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);

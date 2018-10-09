@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bynry.bpal.R;
+import com.bynry.bpal.ui.activities.CalenderActivity;
 import com.bynry.bpal.ui.activities.TechBitesMoreActivity;
 import com.bynry.bpal.ui.adapters.TechBitesFragmentAdapter;
 import com.bynry.bpal.ui.interfaces.RecyclerViewClickListener;
@@ -36,7 +37,7 @@ public class ConnectFragment extends Fragment {
     public ConnectFragment() {
     }
 
-    public static ConnectFragment newInstance(String param1, String param2) {
+    public static ConnectFragment newInstance() {
         ConnectFragment fragment = new ConnectFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -55,10 +56,6 @@ public class ConnectFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_connect, container, false);
         recyclerView = view.findViewById(R.id.recycler_view_connect);
-
-        /*View view1 = inflater.inflate(R.layout.cell_connect, container, false);
-        imgMain = view1.findViewById(R.id.image_main_connect);
-        imgMain.setScaleType(ImageView.ScaleType.FIT_XY);*/
 
         LinearLayoutManager layout = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layout);
@@ -83,7 +80,7 @@ public class ConnectFragment extends Fragment {
 
             @Override
             public void onClick(View view, final int position) {
-                Intent intent = new Intent(context, TechBitesMoreActivity.class);
+                Intent intent = new Intent(context, CalenderActivity.class);
                 startActivity(intent);
             }
 

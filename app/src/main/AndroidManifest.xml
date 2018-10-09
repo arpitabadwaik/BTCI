@@ -25,7 +25,8 @@
         <activity android:name=".ui.activities.SearchActivity" />
         <activity android:name=".ui.activities.TechBitesMoreActivity" />
         <activity android:name=".ui.activities.BazaarDescriptionActivity" />
-        <activity android:name=".ui.activities.CalenderActivity"></activity>
+        <activity android:name=".ui.activities.CalenderActivity" />
+        <activity android:name=".ui.activities.EventDescriptionActivity"></activity>
     </application>
 
 </manifest>

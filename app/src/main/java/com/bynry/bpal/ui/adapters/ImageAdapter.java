@@ -16,8 +16,7 @@ public class ImageAdapter extends BaseAdapter {
 
     // array of integers for images IDs
     private Integer[] mImageIds = { R.drawable.ic_action_image_1,
-            R.drawable.ic_action_image_2, R.drawable.ic_action_image_3,
-            R.drawable.ic_action_image_4
+            R.drawable.ic_action_image_2, R.drawable.ic_action_image_3
     };
 
     // constructor

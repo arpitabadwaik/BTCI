@@ -36,7 +36,7 @@ public class TechBitesFragment extends Fragment {
     public TechBitesFragment() {
     }
 
-    public static TechBitesFragment newInstance(String param1, String param2) {
+    public static TechBitesFragment newInstance() {
         TechBitesFragment fragment = new TechBitesFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);

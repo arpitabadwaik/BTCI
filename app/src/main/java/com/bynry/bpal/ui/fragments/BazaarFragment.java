@@ -35,7 +35,7 @@ public class BazaarFragment extends Fragment {
     public BazaarFragment() {
     }
 
-    public static BazaarFragment newInstance(String param1, String param2) {
+    public static BazaarFragment newInstance() {
         BazaarFragment fragment = new BazaarFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);

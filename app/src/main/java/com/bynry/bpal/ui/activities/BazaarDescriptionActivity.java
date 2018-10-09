@@ -41,11 +41,11 @@ public class BazaarDescriptionActivity extends AppCompatActivity implements Adap
         imgInterested = findViewById(R.id.img_interested);
         imgSaveAd = findViewById(R.id.img_save_ad);
 
-        Gallery gallery = (Gallery) findViewById(R.id.gallery);
+        Gallery gallery = findViewById(R.id.gallery);
         gallery.setAdapter(new ImageAdapter(this));
         gallery.setOnItemSelectedListener(this);
 
-        mDotsLayout = (LinearLayout) findViewById(R.id.image_count);
+        mDotsLayout = findViewById(R.id.image_count);
         // here we count the number of images we have to know how many dots we
         // need
         mDotsCount = gallery.getAdapter().getCount();
@@ -58,7 +58,7 @@ public class BazaarDescriptionActivity extends AppCompatActivity implements Adap
         for (int i = 0; i < mDotsCount; i++) {
             mDotsText[i] = new TextView(this);
             mDotsText[i].setText(".");
-            mDotsText[i].setTextSize(45);
+            mDotsText[i].setTextSize(70);
             mDotsText[i].setTypeface(null, Typeface.BOLD);
             mDotsText[i].setTextColor(android.graphics.Color.GRAY);
             mDotsLayout.addView(mDotsText[i]);

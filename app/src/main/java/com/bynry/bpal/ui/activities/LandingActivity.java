@@ -46,7 +46,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
 
     private Context context;
     private Toolbar toolbar;
-    private TabLayout tabLayout, tabex;
+    private TabLayout tabLayout;
     private ViewPager viewPager;
     private NavigationView navigationViewLeft, navigationViewRight;
     private View headerLayoutLeft, headerLayoutRight;
@@ -71,6 +71,8 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
+
+        context = this;
 
         toolbar = findViewById(R.id.toolbar);
 
@@ -119,8 +121,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -137,6 +138,9 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
 
                if (position == 3){
                    floatingActionButton.setImageResource(R.drawable.ic_action_floating_action_calendar_white);
+               }
+               if (position == 0 || position == 1 || position == 2){
+                   floatingActionButton.setImageResource(R .drawable.ic_action_floating_button);
                }
 
                 /*LayoutInflater li = getLayoutInflater();
@@ -264,36 +268,36 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            Intent intent = new Intent(this, ProfileActivity.class);
+            Intent intent = new Intent(context, ProfileActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_profile) {
-            Intent intent = new Intent(this, AddEditProfileActivity.class);
+            Intent intent = new Intent(context, AddEditProfileActivity.class);
             intent.putExtra("from", "EditProfile");
             startActivity(intent);
 
         } else if (id == R.id.nav_quiz) {
             FragmentManager fm = getSupportFragmentManager();
-            QuizFragment editNameDialogFragment = QuizFragment.newInstance("Some title", "gh");
+            QuizFragment editNameDialogFragment = QuizFragment.newInstance();
             editNameDialogFragment.show(fm, "");
 
         } else if (id == R.id.nav_my_feedback) {
             FragmentManager fm = getSupportFragmentManager();
-            MyFeedbackFragment editNameDialogFragment = MyFeedbackFragment.newInstance("Some title", "gh");
+            MyFeedbackFragment editNameDialogFragment = MyFeedbackFragment.newInstance();
             editNameDialogFragment.show(fm, "");
 
         } else if (id == R.id.nav_saved_posts_and_ads) {
-            Toast.makeText(this, "You clicked on Saved posts and ads", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "You clicked on Saved posts and ads", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_settings) {
-            Toast.makeText(this, "You clicked on settings", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "You clicked on settings", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_assist) {
-            Intent intent = new Intent(this, AssistActivity.class);
+            Intent intent = new Intent(context, AssistActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_logout) {
-            Toast.makeText(this, "You have successfully Logged out", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "You have successfully Logged out", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -303,22 +307,22 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
 
     private void setupTabIcons() {
 
-        TextView tabOne = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab_layout, null);
+        TextView tabOne = (TextView) LayoutInflater.from(context).inflate(R.layout.custom_tab_layout, null);
         tabOne.setText("What's Up?");
         tabOne.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_action_whats_up, 0, 0);
         tabLayout.getTabAt(0).setCustomView(tabOne);
 
-        TextView tabTwo = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab_layout, null);
+        TextView tabTwo = (TextView) LayoutInflater.from(context).inflate(R.layout.custom_tab_layout, null);
         tabTwo.setText("Tech Bites");
         tabTwo.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_action_tech_bites, 0, 0);
         tabLayout.getTabAt(1).setCustomView(tabTwo);
 
-        TextView tabThree = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab_layout, null);
+        TextView tabThree = (TextView) LayoutInflater.from(context).inflate(R.layout.custom_tab_layout, null);
         tabThree.setText("Bazaar");
         tabThree.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_action_bazaar, 0, 0);
         tabLayout.getTabAt(2).setCustomView(tabThree);
 
-        TextView tabFour = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab_layout, null);
+        TextView tabFour = (TextView) LayoutInflater.from(context).inflate(R.layout.custom_tab_layout, null);
         tabFour.setText("Connect");
         tabFour.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_action_connect, 0, 0);
         tabLayout.getTabAt(3).setCustomView(tabFour);
@@ -337,11 +341,15 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
     @Override
     public void onClick(View view) {
         if (view == floatingActionButton) {
-            Intent intent = new Intent(this, StartDiscussionActivity.class);
-            if (positions == 0){
+            if (positions == 0 || positions == 1){
+                Intent intent = new Intent(context, StartDiscussionActivity.class);
                 startActivity(intent);
             }else if (positions == 2){
+                Intent intent = new Intent(context, StartDiscussionActivity.class);
                 intent.putExtra("bazaar","bazaar");
+                startActivity(intent);
+            }else if (positions == 3){
+                Intent intent = new Intent(context, CalenderActivity.class);
                 startActivity(intent);
             }
 
@@ -350,7 +358,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         } else if (view == imgRightDrawer) {
             drawer.openDrawer(Gravity.RIGHT);
         } else if (view == imgSearch) {
-            Intent intent = new Intent(this, SearchActivity.class);
+            Intent intent = new Intent(context, SearchActivity.class);
             startActivity(intent);
         }
     }
