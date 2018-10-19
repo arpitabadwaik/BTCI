@@ -1,6 +1,7 @@
 package com.bynry.bpal.ui.activities;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,7 @@ public class EventDescriptionActivity extends AppCompatActivity implements View.
         edtWriteSomething = findViewById(R.id.edt_write_something_calender);
 
         imgToAttend.setOnClickListener(this);
+        imgbackArrow.setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +63,9 @@ public class EventDescriptionActivity extends AppCompatActivity implements View.
             });
             dialog.show();
 
+        }else if (view == imgbackArrow){
+            Intent intent = new Intent(this, CalenderActivity.class);
+            startActivity(intent);
         }
     }
 }

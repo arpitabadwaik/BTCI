@@ -141,7 +141,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btn_apply"
+            android:id="@+id/btn_remove_event"
             android:layout_width="180dp"
             android:layout_height="60dp"
             android:layout_below="@id/linear_layout_events_2"

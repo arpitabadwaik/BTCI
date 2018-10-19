@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/img_back_arrow_start_discussion"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="20dp"
             android:src="@drawable/ic_action_back_arrow" />

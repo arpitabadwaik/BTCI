@@ -245,6 +245,7 @@ public class LandingActivity extends AppCompatActivity implements NavigationView
         } else {
             super.onBackPressed();
         }
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

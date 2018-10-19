@@ -55,6 +55,8 @@ public class StartDiscussionActivity extends AppCompatActivity implements View.O
             btnSubmit.setText("Post");
         }
 
+        imgBackArrow.setOnClickListener(this);
+
     }
 
 

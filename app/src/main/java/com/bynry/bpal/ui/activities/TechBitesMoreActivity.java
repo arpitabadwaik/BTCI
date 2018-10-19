@@ -22,14 +22,10 @@ public class TechBitesMoreActivity extends AppCompatActivity implements View.OnC
 
     private FrameLayout mainFrameLayout;
     private TextView txtHeadingText, txtDateOfPost, txtDescriptionText, txtLike, txtComment, txtSavePost;
-    private ImageView imgLike, imgComment, imgSave, imgSendMessage;
+    private ImageView imgLike, imgComment, imgSave, imgSendMessage, imgBackArrow;
     private EditText edtWriteSomething;
     private ImageView image1, image2;
     private CardView cardViewComment;
-
-    // In Fragment OpenImageVideoFragment
-    private ImageView imgCloseFragment;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,20 +45,21 @@ public class TechBitesMoreActivity extends AppCompatActivity implements View.OnC
         imgComment = findViewById(R.id.img_comment);
         imgSave = findViewById(R.id.img_save);
         imgSendMessage = findViewById(R.id.img_message_send_tech_bites);
+        imgBackArrow = findViewById(R.id.img_back_arrow_tech_bites);
 
         edtWriteSomething = findViewById(R.id.edt_write_something_text);
 
         image1 = findViewById(R.id.image_view);
-        image1.setScaleType(ImageView.ScaleType.FIT_XY);
         image2 = findViewById(R.id.video_view);
-        image2.setScaleType(ImageView.ScaleType.FIT_XY);
 
         cardViewComment = findViewById(R.id.card_comments);
 
         imgLike.setOnClickListener(this);
         imgComment.setOnClickListener(this);
         imgSave.setOnClickListener(this);
+        imgBackArrow.setOnClickListener(this);
         image1.setOnClickListener(this);
+        image2.setOnClickListener(this);
     }
 
     @Override
@@ -72,7 +69,7 @@ public class TechBitesMoreActivity extends AppCompatActivity implements View.OnC
             View layout = li.inflate(R.layout.customized_toast, (ViewGroup) findViewById(R.id.customized_toast_layout));
             Toast toast = new Toast(getApplicationContext());
             toast.setDuration(Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.TOP, 0, 220);
+            toast.setGravity(Gravity.TOP, 0, 120);
             toast.setView(layout);//setting the view of custom toast layout
             toast.show();
             imgSave.setImageResource(R.drawable.ic_action_save_post_filled);
@@ -83,7 +80,7 @@ public class TechBitesMoreActivity extends AppCompatActivity implements View.OnC
         } else if (view == imgLike) {
             imgLike.setImageResource(R.drawable.ic_action_like_orange_filled);
 
-        } else if (view == image1) {
+        } else if (view == image1 || view == image2) {
             final Dialog dialog = new Dialog(this);
             dialog.setContentView(R.layout.open_image_video_dialog);
 
@@ -94,8 +91,20 @@ public class TechBitesMoreActivity extends AppCompatActivity implements View.OnC
                     dialog.dismiss();
                 }
             });
+
+            final ImageView imgOpen = dialog.findViewById(R.id.img_open);
+            imgOpen.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    imgOpen.setImageResource(R.drawable.ic_action_image_1);
+                }
+            });
+
             dialog.show();
 
+        }else if (view == imgBackArrow){
+            Intent intent = new Intent(this, LandingActivity.class);
+            startActivity(intent);
         }
     }
 }

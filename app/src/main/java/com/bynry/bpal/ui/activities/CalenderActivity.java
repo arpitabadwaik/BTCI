@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -22,8 +23,8 @@ import java.util.Locale;
 public class CalenderActivity extends AppCompatActivity implements View.OnClickListener{
 
     private FloatingActionButton floatingActionButton;
-    private LinearLayout layoutEventDetails;
     private CustomCalendarView calendarView;
+    private CardView cardView, cardView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,8 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
 
         floatingActionButton = findViewById(R.id.floating_action_list_btn);
 
-        layoutEventDetails = findViewById(R.id.layout_event_details);
+        cardView = findViewById(R.id.card_event_details);
+        cardView1 = findViewById(R.id.card_event_details_1);
 
         calendarView = findViewById(R.id.calender_view);
         // Show Monday as first date of week
@@ -45,7 +47,9 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
         calendarView.refreshCalendar(currentCalendar);
 
         floatingActionButton.setOnClickListener(this);
-        layoutEventDetails.setOnClickListener(this);
+        calendarView.setOnClickListener(this);
+        cardView.setOnClickListener(this);
+        cardView1.setOnClickListener(this);
 
     }
 
@@ -63,7 +67,7 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
                 }
             });
 
-            Button btnRemoveEvent = dialog.findViewById(R.id.btn_okay);
+            Button btnRemoveEvent = dialog.findViewById(R.id.btn_remove_event);
             btnRemoveEvent.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -73,7 +77,7 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
             });
             dialog.show();
 
-        }else if (view == layoutEventDetails){
+        }else if (view == cardView || view == cardView ){
             Intent intent = new Intent(this, EventDescriptionActivity.class);
             startActivity(intent);
 

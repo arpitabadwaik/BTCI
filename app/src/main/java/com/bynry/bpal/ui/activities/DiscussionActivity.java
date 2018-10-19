@@ -36,8 +36,6 @@ public class DiscussionActivity extends AppCompatActivity implements View.OnClic
         layoutFooter = findViewById(R.id.layout_footer);
         layoutDetails = findViewById(R.id.layout_details);
 
-        recyclerView = findViewById(R.id.recycler_view);
-
         circleImgProfilePictureUser = findViewById(R.id.circle_img_profile_picture_user);
 
         txtWhatsUp = findViewById(R.id.txt_whats_up);
@@ -58,6 +56,8 @@ public class DiscussionActivity extends AppCompatActivity implements View.OnClic
             caption = extras.getString("caption");
 
         txtCaption.setText(caption);
+
+        imgBackArrow.setOnClickListener(this);
     }
 
     @Override
